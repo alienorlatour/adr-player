@@ -38,24 +38,35 @@ body {
     object-fit: cover; /* Maintain aspect ratio and cover the entire square */
 }
 
-.prev-button,
-.next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.3);
+.player-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.player-container button {
+    background: rgba(0, 0, 0, 0.3);
     color: white;
+    cursor: pointer;
+    border: none;
+
     width: 50px; /* Set the desired width */
     height: 50px; /* Set the desired height */
     border-radius: 50%;
 }
 
-.next-button {
-    right: 0;
+/* Add styles for the pause icon (hidden by default) */
+.play-pause-button .pause-icon {
+    display: none;
 }
+
+/* Add styles for the play icon */
+.play-pause-button .play-icon {
+    display: block;
+}
+
+/*******************/
 
 .carousel-dots {
     text-align: center;
@@ -97,35 +108,4 @@ body {
 
 .thumbnail img:hover {
     border-color: #666;
-}
-
-/* Add styles for the play/pause button */
-.play-pause-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.3);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-/* Add styles for the pause icon (hidden by default) */
-.play-pause-button .pause-icon {
-    display: none;
-}
-
-/* Add styles for the play icon */
-.play-pause-button .play-icon {
-    display: block;
-}
-
-.play-pause-button button {
-    background: none;
-    border: none;
 }
