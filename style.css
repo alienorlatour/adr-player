@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-height: 100vw;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide {
+    flex: 0 0 100%; /* Each slide occupies the full width of the container */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire square */
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 50px; /* Set the desired width */
+    height: 50px; /* Set the desired height */
+}
+
+.next-button {
+    right: 0;
+}
+
+.carousel-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.thumbnail {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire square */
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+.thumbnail img:hover {
+    border-color: #666;
+}
+
+/* Add styles for the play/pause button */
+.play-pause-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Add styles for the pause icon (hidden by default) */
+.play-pause-button .pause-icon {
+    display: none;
+}
+
+/* Add styles for the play icon */
+.play-pause-button .play-icon {
+    display: block;
+}
+
+.play-pause-button button {
+    background: none;
+    border: none;
+}
