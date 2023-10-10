@@ -3,9 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const thumbnails = document.querySelectorAll(".thumbnail");
     const playButton = document.querySelector(".play-button");
     const pauseButton = document.querySelector(".pause-button");
+    const audio = document.getElementById("audioPlayer");
 
     // Simulated playlist and song index
-    const playlists = [["Brahms 1", "Brahms 2", "Brahms 3", "Brahms 4"], ["Podcast 1", "Podcast 2", "Podcast 3"], ["Other 1"]];
+    const playlists = [
+        ["brahms/Kendall.mp3", "brahms/MQ.mp3", "brahms/Tobermory.mp3"],
+        ["podcast/Kendall-bis.mp3", "podcast/Tobermory-bis.mp3"],
+        ["other/Sibylle.m4a"]
+    ];
     let numSlides = document.querySelectorAll(".carousel-slide").length
     if (numSlides !== playlists.length) {
         console.error("num slides =", numSlides, "playlist is ", playlists.length)
@@ -29,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".dot").forEach((dot, index) => {
             dot.classList.toggle("active", index === currentSongIndex);
         });
+
+        changeAudioSource(playlists[currentAlbum][currentSongIndex])
     }
 
     function replaceDots() {
@@ -85,8 +92,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // You can add code to start/stop audio or video playback here
         if (isPlaying) {
+            audio.play();
         } else {
+            audio.pause();
         }
+    }
+
+    // Change the source of the audio
+    function changeAudioSource(newSource) {
+        const audio = document.getElementById("audioPlayer");
+        audio.src = newSource;
+        audio.load(); // Load the new source
+        audio.play(); // Start playing the new source
     }
 
     // Initial setup: Show the play button by default
@@ -96,5 +113,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initialize the carousel
     changeSong(0, 0);
-
 });
