@@ -50,6 +50,7 @@ body {
     color: white;
     width: 50px; /* Set the desired width */
     height: 50px; /* Set the desired height */
+    border-radius: 50%;
 }
 
 .next-button {
@@ -69,6 +70,10 @@ body {
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
+}
+
+.dot.active {
+    background-color: #FFD862;
 }
 
 .thumbnail-container {
