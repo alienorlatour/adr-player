@@ -14,10 +14,16 @@ body {
     color: #333;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .carousel-container {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    max-width: 100vh;
     max-height: 100vw;
 }
 
@@ -44,7 +50,8 @@ body {
 }
 
 .player-container button {
-    background: rgba(0, 0, 0, 0.3);
+    /*background: rgba(0, 0, 0, 0.3);*/
+    background: none;
     color: white;
     cursor: pointer;
     border: none;
@@ -52,6 +59,10 @@ body {
     width: 50px; /* Set the desired width */
     height: 50px; /* Set the desired height */
     border-radius: 50%;
+}
+
+.player-container button svg {
+    opacity: 70%;
 }
 
 /* Add styles for the pause icon (hidden by default) */
@@ -82,7 +93,7 @@ body {
 }
 
 .dot.active {
-    background-color: #FFD862;
+    background-color: #ffde59;
 }
 
 .thumbnail-container {

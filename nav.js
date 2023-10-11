@@ -7,9 +7,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Simulated playlist and song index
     const playlists = [
-        ["brahms/Kendall.mp3", "brahms/MQ.mp3", "brahms/Tobermory.mp3"],
-        ["podcast/Kendall-bis.mp3", "podcast/Tobermory-bis.mp3"],
-        ["other/Sibylle.m4a"]
+        {
+            cover: "brahms/cover.jpg",
+            songs: ["brahms/Kendall.mp3", "brahms/MQ.mp3", "brahms/Tobermory.mp3"],
+            background: "#ffde59",
+        },
+        {
+            cover: "podcast/cover.jpg",
+            songs: ["podcast/Kendall-bis.mp3", "podcast/Tobermory-bis.mp3"],
+            background: "#000"
+        },
+        {
+            cover: "other/cover.jpg",
+            songs: ["other/Sibylle.m4a"],
+            background: "#000"
+        }
     ];
     let numSlides = document.querySelectorAll(".carousel-slide").length
     if (numSlides !== playlists.length) {
@@ -35,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dot.classList.toggle("active", index === currentSongIndex);
         });
 
-        changeAudioSource(playlists[currentAlbum][currentSongIndex])
+        changeAudioSource(playlists[currentAlbum].songs[currentSongIndex])
     }
 
     function replaceDots() {
@@ -44,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Clear existing dots
         carouselDots.innerHTML = "";
 
-        let numDots = playlists[currentAlbum].length
+        let numDots = playlists[currentAlbum].songs.length
 
         // Add the specified number of dots
         for (let i = 1; i <= numDots; i++) {
@@ -103,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const audio = document.getElementById("audioPlayer");
         audio.src = newSource;
         audio.load(); // Load the new source
-        audio.play(); // Start playing the new source
     }
 
     // Initial setup: Show the play button by default
