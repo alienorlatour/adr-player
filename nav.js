@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const pauseButton = document.querySelector(".pause-button");
     const audio = document.getElementById("audioPlayer");
 
+    // Toggle play/pause functionality and button visibility
+    let isPlaying = false;
+
     // Simulated playlist and song index
     const playlists = [
         {
@@ -34,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to change the song and update the dot
     function changeSong(album, songIndex) {
         console.log(">>", album, songIndex)
+
         if (currentAlbum !== album) {
             currentAlbum = album
             replaceDots()
@@ -67,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 dot.classList.add("active");
             }
             dot.addEventListener("click", () => {
-                changeSong(currentAlbum, i)
+                changeSong(currentAlbum, i-1)
             })
             carouselDots.appendChild(dot);
         }
@@ -75,13 +79,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Event listener for previous button
     document.querySelector(".prev-button").addEventListener("click", () => {
-        let newSong = (currentSongIndex - 1 + playlists[currentAlbum].length) % playlists[currentAlbum].length;
+        let newSong = (currentSongIndex - 1 + playlists[currentAlbum].songs.length) % playlists[currentAlbum].songs.length;
         changeSong(currentAlbum, newSong);
     });
 
     // Event listener for next button
     document.querySelector(".next-button").addEventListener("click", () => {
-        let newSong = (currentSongIndex + 1 + playlists[currentAlbum].length) % playlists[currentAlbum].length;
+        let newSong = (currentSongIndex + 1 + playlists[currentAlbum].songs.length) % playlists[currentAlbum].songs.length;
         changeSong(currentAlbum, newSong);
     });
 
@@ -91,9 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
             changeSong(index, 0);
         });
     });
-
-    // Toggle play/pause functionality and button visibility
-    let isPlaying = false;
 
     function togglePlayPause() {
         isPlaying = !isPlaying;
@@ -115,6 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const audio = document.getElementById("audioPlayer");
         audio.src = newSource;
         audio.load(); // Load the new source
+        if (isPlaying) {
+            audio.play()
+        }
     }
 
     // Initial setup: Show the play button by default
