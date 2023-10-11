@@ -77,18 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Event listener for previous button
-    document.querySelector(".prev-button").addEventListener("click", () => {
-        let newSong = (currentSongIndex - 1 + playlists[currentAlbum].songs.length) % playlists[currentAlbum].songs.length;
-        changeSong(currentAlbum, newSong);
-    });
-
-    // Event listener for next button
-    document.querySelector(".next-button").addEventListener("click", () => {
-        let newSong = (currentSongIndex + 1 + playlists[currentAlbum].songs.length) % playlists[currentAlbum].songs.length;
-        changeSong(currentAlbum, newSong);
-    });
-
     // Event listener for thumbnail clicks
     thumbnails.forEach((thumbnail, index) => {
         thumbnail.addEventListener("click", () => {
