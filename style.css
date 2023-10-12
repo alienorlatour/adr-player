@@ -1,7 +1,12 @@
+@font-face {
+    font-family: 'SlammerTag'; /* Font family name */
+    src: url('slammertag.ttf') format('truetype'); /* Font file source and format */
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: "Times New Roman", serif;
+    font-family: "SlammerTag", serif;
     background: url("wall.jpg") no-repeat center center fixed;
     background-size: cover;
 }
@@ -12,8 +17,9 @@ body {
 
 .logo {
     text-decoration: none;
-    font-size: 24px;
-    color: #333;
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
 }
 
 .container {
@@ -21,13 +27,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
 }
 
 .carousel-container {
     position: relative;
     overflow: hidden;
-    margin: 0 10vw;
+    margin: 0 18vw;
     transform: rotate(4deg);
 }
 
@@ -54,6 +60,10 @@ body {
     cursor: pointer;
     position: absolute;
     border: none;
+}
+
+.carousel-slide .sticker:active {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .carousel-slide img {
@@ -91,10 +101,14 @@ body {
 }
 
 .player-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
     position: absolute;
+    transform: translateY(-100%);
     top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0) rotateZ(4deg);
 }
 
 .player-container button {
@@ -106,7 +120,7 @@ body {
 }
 
 .player-container button svg {
-    opacity: 70%;
+    opacity: 75%;
 }
 
 /* Add styles for the pause icon (hidden by default) */
@@ -123,16 +137,16 @@ body {
 
 .carousel-dots {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 30px;
     background-color: #333;
     border-radius: 50%;
-    margin: 0 5px;
+    margin: 0 10px;
     cursor: pointer;
 }
 
