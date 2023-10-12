@@ -107,8 +107,8 @@ body {
 
     width: 100%;
     position: absolute;
-    transform: translateY(-100%);
     top: 50%;
+    transform: translateY(-100%);
 }
 
 .player-container button {
