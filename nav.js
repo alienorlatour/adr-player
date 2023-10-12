@@ -116,4 +116,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initialize the carousel
     changeSong(0, 0);
+
+    document.querySelectorAll('.sticker').forEach(function (sticker) {
+        sticker.addEventListener('click', function () {
+            if (sticker.parentElement) {
+                sticker.parentElement.classList.toggle("flipped")
+            }
+        });
+    });
+
 });
