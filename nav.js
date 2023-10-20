@@ -12,17 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const playlists = [
         {
             cover: "brahms/cover.jpg",
-            songs: ["brahms/Kendall.mp3", "brahms/MQ.mp3", "brahms/Tobermory.mp3"],
+            songs: ["brahms/frank1.mp3", "brahms/frank2.mp3", "brahms/frank3.mp3"],
             background: "#ffde59",
         },
         {
             cover: "podcast/cover.jpg",
-            songs: ["podcast/Kendall-bis.mp3", "podcast/Tobermory-bis.mp3"],
+            songs: ["podcast/other.mp3", "podcast/other2.mp3", "podcast/other3.mp3"],
             background: "#000"
         },
         {
             cover: "other/cover.jpg",
-            songs: ["other/Sibylle.m4a"],
+            songs: ["other/lento.mp3"],
             background: "#000"
         }
     ];
