@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             cover: "brahms/cover.jpg",
             songs: ["brahms/frank1.mp3", "brahms/frank2.mp3", "brahms/frank3.mp3"],
-            background: "#ffde59",
+            background: "#c80000",
         },
         {
             cover: "podcast/cover.jpg",

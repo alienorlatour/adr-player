@@ -3,11 +3,16 @@
     src: url('slammertag.ttf') format('truetype'); /* Font file source and format */
 }
 
+@font-face {
+    font-family: 'CourierPolski'; /* Font family name */
+    src: url('courierPolski.ttf') format('truetype'); /* Font file source and format */
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: "SlammerTag", serif;
-    background: url("wall.jpg") no-repeat center center fixed;
+    font-family: "CourierPolski", serif;
+    background: black no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -34,7 +39,6 @@ body {
     position: relative;
     overflow: hidden;
     margin: 0 18vw;
-    transform: rotate(4deg);
 }
 
 .carousel {
@@ -104,11 +108,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-100%);
 }
 
 .player-container button {
@@ -151,7 +151,7 @@ body {
 }
 
 .dot.active {
-    background-color: #ffde59;
+    background-color: #c80000;
 }
 
 .thumbnail-container {
