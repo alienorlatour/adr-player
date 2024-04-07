@@ -3,36 +3,52 @@
     src: url('slammertag.ttf') format('truetype'); /* Font file source and format */
 }
 
-@font-face {
-    font-family: 'CourierPolski'; /* Font family name */
-    src: url('courierPolski.ttf') format('truetype'); /* Font file source and format */
-}
-
 body {
     margin: 0;
     padding: 0;
-    font-family: "CourierPolski", serif;
-    background: black no-repeat center center fixed;
+    font-family: monospace;
+    background: #fff8ef no-repeat center center fixed;
     background-size: cover;
 }
 
 .header {
-    padding: 10px;
+    width: 100%;
+}
+
+.title {
+    padding: 15px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    border-bottom: black double 10px;
+    min-width: 500px;
+
 }
 
 .logo {
     text-decoration: none;
-    font-size: 45px;
-    color: white;
+    font-size: 65px;
+    color: black;
     font-weight: bold;
 }
 
+.header .subtitle {
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.header .lyre-container {
+    width: 25%;
+}
+
+.header .lyre {
+    height: 75px;
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
+    padding: 10px;
 }
 
 .carousel-container {

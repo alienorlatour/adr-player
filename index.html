@@ -3,96 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Écoutez l'AdR</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="lyre.ico">
+    <title>AdR</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="header">
-    <a href="https://www.armée-des-romantiques.fr/" class="logo">Armée des Romantiques</a>
-</div>
-<div class="container">
-    <div class="sticker-container">
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-slide">
-                    <img src="brahms/cover-bg.jpg" alt="Brahms">
-                    <div class="verso" style="background-color: #c80000;"><p>St. agur blue cheese cheese triangles cheesy grin. Manchego squirty cheese when the
-                        cheese comes out everybody's happy
-                        stilton cheese slices caerphilly roquefort manchego. Roquefort cheddar roquefort cheesy feet rubber cheese melted cheese mascarpone
-                        emmental. Stinking bishop happy dolcelatte macaroni cheese airedale cheesecake cheese strings smelly cheese gouda. Macaroni cheese
-                        stilton babybel cheesy feet.</p>
-                    </div>
-                    <button class="sticker"></button>
-                </div>
-                <div class="carousel-slide">
-                    <img src="podcast/cover.png" alt="Podcasts">
-                    <div class="verso" style="background-color: #222; color: white;">
-                        <p>Monterey jack rubber cheese pecorino. Stilton paneer cheesy grin blue castello cottage cheese when the cheese comes out everybody's
-                            happy
-                            pepper jack cream cheese. Cheese triangles parmesan cheeseburger mascarpone cow macaroni cheese caerphilly macaroni cheese. When the
-                            cheese comes out everybody's happy dolcelatte macaroni cheese airedale cheesecake cheese strings smelly cheese gouda. Macaroni
-                            cheese
-                            stilton babybel cheesy feet.</p>
-                    </div>
-                    <button class="sticker"></button>
-                </div>
-                <div class="carousel-slide">
-                    <img src="other/cover.png" alt="Other">
-                    <div class="verso" style="background-color: #222; color: white;"><p>St. agur blue cheese cheese triangles cheesy grin. Manchego squirty
-                        cheese
-                        when the cheese comes out everybody's happy
-                        stilton cheese slices caerphilly roquefort manchego. Roquefort cheddar roquefort cheesy feet rubber cheese melted cheese mascarpone
-                        emmental. Stinking bishop blue castello cheese and wine rubber cheese mascarpone rubber cheese cauliflower cheese.</p>
-                    </div>
-                    <button class="sticker"></button>
-                </div>
-            </div>
-        </div>
-        <div class="player-container">
-            <button class="prev-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12vw" height="12vw" viewBox="0 0 24 24">
-                    <path fill="black" d="M 12 5 v 14 l -11 -7 Z M 18 5 v 14 l -11 -7 Z"/>
-                </svg>
-            </button>
-            <div class="play-pause-button">
-                <button class="play-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24">
-                        <path fill="white" d="M8 5v14l11-7z"/>
-                    </svg>
-                </button>
-                <button class="pause-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24">
-                        <path fill="white" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                    </svg>
-                </button>
-            </div>
-            <button class="next-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12vw" height="12vw" viewBox="0 0 24 24">
-                    <path fill="black" d="M 5 5 v 14 l 11 -7 Z M 11 5 v 14 l 11 -7 Z"/>
-                </svg>
-            </button>
-        </div>
+<header>
+    <div class="title-wrapper">
+        <h1 class="main-title">L'Armée des Romantiques</h1>
+        <h2 class="subtitle">Classique Ultra</h2>
     </div>
-    <div class="carousel-dots">
-        <!-- Dynamically generated -->
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
     </div>
-    <div class="thumbnail-container">
-        <div class="thumbnail">
-            <img src="brahms/cover.jpg" alt="Thumbnail 1">
-        </div>
-        <div class="thumbnail">
-            <img src="podcast/cover.png" alt="Thumbnail 2">
-        </div>
-        <div class="thumbnail">
-            <img src="other/cover.png" alt="Thumbnail 2">
-        </div>
-    </div>
-</div>
-<audio id="audioPlayer" controls style="display: none">
-    <source src="brahms/Kendall.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+</header>
+<div class="border"></div>
 
-<script src="nav.js"></script>
+<nav class="menu">
+    <ul>
+        <li><a href="#">Présentation</a></li>
+        <li><a href="#">Réflexions</a></li>
+        <li><a href="#">Programmes</a></li>
+        <li><a href="#">Galerie</a></li>
+        <li><a href="#">Écouter</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <div class="column">
+        <p>C'est sous la bannière de l'Armée des Romantiques que se sont rassemblés des compagnons fidèles tels que la soprano Magali Léger, le baryton Alain
+            Buet, le violoncelliste Emmanuel Balssa, le pianiste Rémy Cardinale, les violonistes Shunske Sato, Girolamo Bottiglieri, Raya Raytcheva, l’altiste
+            Caroline Cohen-Adad, le clarinettiste Lorenzo Coppola… Cette Armée bien singulière a pour ambition de réinterpréter les chefs d’œuvres de la musique
+            de chambre du XIXe siècle sur instruments historiques, en repositionnant cette musique novatrice dans le contexte intellectuel et artistique de
+            l’époque.</p>
+
+        <img src="Remi.webp" alt="Brahms cover">
+
+    </div>
+    <div class="column">
+        <p>Les programmes des concerts de l’Armée des Romantiques visent à restituer l’atmosphère d’effervescence, de découverte et les débats passionnés qui
+            animèrent tout le XIXe siècle. Dans cet esprit, le concert donne lieu à des commentaires et des explications par les interprètes sur le contexte
+            historique, les partitions et les instruments, favorisant une écoute instruite entre les musiciens et le public.</p>
+
+        <p>L’Armée des Romantiques affirme son engagement pour l’interprétation sur instruments historiques qui s’avère être la seule réponse crédible pour
+            rendre la modernité des œuvres jouées. Notre pratique régulière des instruments anciens nous amène à nous interroger sur l’héritage transmis par le
+            XXème siècle. Leurs sonorités, leurs couleurs, leurs dynamiques, bousculent nos propres habitudes et certitudes sur l’interprétation des œuvres. Ce
+            nouveau prisme sonore qu’offrent les instruments anciens, réactive notre écoute, bouleverse nos attentes et redonne une nouvelle jeunesse à un
+            répertoire parfois figé dans le temps.
+    </div>
+    <div class="column">
+
+
+        <p>L'Armée des Romantiques est convaincue de l'importance qu'il y a de donner un autre sens à notre art. Les dérives actuelles que sont l'ultra
+            médiatisation, le culte de la personnalité, la logique des modes, sont autant d'artifices qui nous empêchent de repenser l'art d'une manière
+            sereine. La subversion à laquelle nous appelons, passera par une autre façon d’aborder le concert et par là, rendre l’écoute plus active, plus
+            passionnée, plus joviale, plus réfléchie… Gageons que notre envie rende notre art un peu plus désirable pour le plus grand nombre.
+
+
+        <p>L'Armée des Romantiques se trouve actuellement en résidence à la Fondation Singer-Polignac à Paris et à l'Académie Bach à Arques-la-Bataille.</p>
+    </div>
+</main>
+
 </body>
 </html>
