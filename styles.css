@@ -36,14 +36,6 @@ header .title-wrapper .subtitle {
     max-width: 90px;
 }
 
-.border {
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
-    margin: 0 20px;
-    height: 5px;
-    display: block;
-}
-
 @media screen and (max-width: 840px) {
     header .title-wrapper .main-title {
         font-size: 40px; /* Adjust the font size as needed */
@@ -63,7 +55,8 @@ header .title-wrapper .subtitle {
 .menu {
     margin: 0 20px 30px 20px;
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #222;
+    border-top: 1px solid #222;
 }
 
 .menu ul {
@@ -79,6 +72,11 @@ header .title-wrapper .subtitle {
     border-right: 1px solid #ccc;
 }
 
+.menu li:first-child {
+    border-left: 1px solid #ccc;
+    padding: 0 3px;
+}
+
 .menu li a.active{
     border-bottom: 3px black solid;
     margin-bottom: -3px;
@@ -86,7 +84,7 @@ header .title-wrapper .subtitle {
 
 .menu li img {
     height: 28px;
-    margin: -7px;;
+    margin: -8px;;
 }
 
 .menu a {
@@ -115,8 +113,10 @@ main.content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 1px solid #222;
+    padding-bottom: 5px;
 }
 
 main.content img {
-    width: 100%; /* Make the image fill the width of the container */
+    width: 100%;
 }
