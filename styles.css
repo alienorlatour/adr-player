@@ -79,7 +79,16 @@ header .title-wrapper .subtitle {
 }
 
 .menu li:first-child {
-    border-left: 1px solid #ccc;
+    border: none;
+}
+
+.menu li a.active{
+    border: 1px black solid
+}
+
+.menu li img {
+    height: 28px;
+    margin: -7px;;
 }
 
 .menu a {
@@ -95,7 +104,7 @@ header .title-wrapper .subtitle {
 
 /**** main ****/
 
-.content {
+main.content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px; /* Adjust the gap between columns */

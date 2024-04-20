@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             cover: "podcast/cover.jpg",
-            songs: ["podcast/other.mp3", "podcast/other2.mp3", "podcast/other3.mp3"],
+            songs: ["podcast/other1.mp3", "podcast/other2.mp3", "podcast/other3.mp3"],
             background: "#000"
         },
         {
