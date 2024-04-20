@@ -70,20 +70,18 @@ header .title-wrapper .subtitle {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    font-size: 0;
 }
 
 .menu li {
     display: inline-block;
+    font-size: 12px;
     border-right: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-}
-
-.menu li:first-child {
-    border: none;
 }
 
 .menu li a.active{
-    border: 1px black solid
+    border-bottom: 3px black solid;
+    margin-bottom: -3px;
 }
 
 .menu li img {
@@ -93,7 +91,7 @@ header .title-wrapper .subtitle {
 
 .menu a {
     display: block;
-    padding: 10px 20px;
+    padding: 10px;
     text-decoration: none;
     color: #333;
 }

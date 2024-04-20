@@ -1,0 +1,11 @@
+/* Reset margin and padding for both <ul> and <ol> elements */
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset margin for <li> elements within <ul> or <ol> */
+ul li, ol li {
+    margin: 0;
+    padding: 0;
+}
