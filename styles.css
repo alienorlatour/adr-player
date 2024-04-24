@@ -1,6 +1,10 @@
 body {
     margin: 0;
     font-family: monospace;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header h1, header h2 {
@@ -12,7 +16,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    margin: 20px 20px 5px 20px;
+
+    border-top: black thin solid;
+    border-bottom: black thin solid;
 }
 
 header .title-wrapper {
@@ -29,11 +36,11 @@ header .title-wrapper .main-title {
 header .title-wrapper .subtitle {
     font-size: 25px;
     color: #666;
-    text-transform: uppercase;
 }
 
 .logo img {
     max-width: 90px;
+    margin-bottom: -4px;
 }
 
 @media screen and (max-width: 840px) {
@@ -100,6 +107,10 @@ header .title-wrapper .subtitle {
 
 /**** main ****/
 
+main {
+    flex-grow: 1;
+}
+
 main.content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -119,4 +130,12 @@ main.content {
 
 main.content img {
     width: 100%;
+}
+
+/***** foot ********/
+footer {
+    border-top: black thin solid;
+    margin: 0 20px;
+    text-align: center;
+    font-size: 80%;
 }
