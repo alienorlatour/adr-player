@@ -18,8 +18,8 @@ header {
     align-items: center;
     margin: 20px 20px 5px 20px;
 
-    border-top: black thin solid;
-    border-bottom: black thin solid;
+    border-top: #222 3px solid;
+    border-bottom: #222 3px solid;
 }
 
 header .title-wrapper {
@@ -30,7 +30,7 @@ header .title-wrapper {
 }
 
 header .title-wrapper .main-title {
-    font-size: 50px;
+    font-size: 55px;
 }
 
 header .title-wrapper .subtitle {
@@ -38,14 +38,22 @@ header .title-wrapper .subtitle {
     color: #666;
 }
 
+header .title-wrapper .subtitle:before,
+header .title-wrapper .subtitle:after {
+    content: "════════";
+    padding: 0 10px;
+}
+
 .logo img {
     max-width: 90px;
+
+    /* bidouille */
     margin-bottom: -4px;
 }
 
 @media screen and (max-width: 840px) {
     header .title-wrapper .main-title {
-        font-size: 40px; /* Adjust the font size as needed */
+        font-size: 40px;
     }
 
     header .title-wrapper .subtitle {
@@ -62,8 +70,8 @@ header .title-wrapper .subtitle {
 .menu {
     margin: 0 20px 30px 20px;
     text-align: center;
-    border-bottom: 1px solid #222;
-    border-top: 1px solid #222;
+    border-bottom: 2px solid #222;
+    border-top: 2px solid #222;
 }
 
 .menu ul {
@@ -84,7 +92,7 @@ header .title-wrapper .subtitle {
     padding: 0 3px;
 }
 
-.menu li a.active{
+.menu li a.active {
     border-bottom: 3px black solid;
     margin-bottom: -3px;
 }
