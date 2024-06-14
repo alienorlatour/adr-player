@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.querySelector(".carousel");
     const thumbnails = document.querySelectorAll(".thumbnail");
+
     const playButton = document.querySelector(".play-button");
     const pauseButton = document.querySelector(".pause-button");
+    const nextButton = document.querySelector(".next-button")
+    const prevButton = document.querySelector(".prev-button")
+
     const audio = document.getElementById("audioPlayer");
+    const currentlyPlaying = document.querySelector(".currently-playing")
 
     // Toggle play/pause functionality and button visibility
     let isPlaying = false;
@@ -11,38 +16,75 @@ document.addEventListener("DOMContentLoaded", function () {
     // Simulated playlist and song index
     const playlists = [
         {
-            cover: "brahms/cover.jpg",
-            songs: ["brahms/frank1.mp3", "brahms/frank2.mp3", "brahms/frank3.mp3"],
+            cover: "music/01rouge/cover.png",
+            songs: [
+                {
+                    track: "music/01rouge/frank1.mp3",
+                    title: "Brahms - Un titre très long avec les noms des mouvements et le numéro 259"
+                },
+                {
+                    track: "music/01rouge/frank2.mp3",
+                    title: "Brahms - Un autre titre long avec les noms et le numéro de l'opus 658"
+                },
+                {track: "music/01rouge/frank3.mp3", title: "Brahms - Titre un peu long long avec le numéro de l'opus 95"}
+            ],
             background: "#c80000",
         },
         {
-            cover: "podcast/cover.jpg",
-            songs: ["podcast/other1.mp3", "podcast/other2.mp3", "podcast/other3.mp3"],
-            background: "#000"
+            cover: "music/02jaune/cover.png",
+            songs: [
+                {
+                    track: "music/02jaune/lento.mp3",
+                    title: "Liszt - La couleur jaune est souvent associée à la lumière et à la joie."
+                }
+            ],
+            background: "#ffd100"
         },
         {
-            cover: "other/cover.jpg",
-            songs: ["other/lento.mp3"],
-            background: "#000"
+            cover: "music/03violet/cover.png",
+            songs: [
+                {
+                    track: "music/03violet/other1.mp3",
+                    title: "Chopin - Le violet est une couleur associée à la créativité."
+                },
+                {
+                    track: "music/03violet/other2.mp3",
+                    title: "Chopin - Petit titre."
+                }
+            ],
+            background: "#7f1bce"
+        },
+        {
+            cover: "music/04vert/cover.png",
+            songs: [
+                {
+                    track: "music/04vert/lento.mp3",
+                    title: "Beethoven - Le vert symbolise la nature, la croissance et la tranquillité."
+                }
+            ],
+            background: "#70cd1b"
         }
     ];
+
     let numSlides = document.querySelectorAll(".carousel-slide").length
     if (numSlides !== playlists.length) {
         console.error("num slides =", numSlides, "playlist is ", playlists.length)
     }
 
-    let currentAlbum = -1;
-    let currentSongIndex = -1;
+    let currentAlbum = 0;
+    let currentSongIndex = 0;
 
     // Function to change the song and update the dot
     function changeSong(album, songIndex) {
-        console.log(">>", album, songIndex)
-
         if (currentAlbum !== album) {
             currentAlbum = album
-            replaceDots()
+            // replacePlaylist()
             carousel.style.transform = `translateX(-${currentAlbum * 100}%)`;
         }
+
+        // Toggle button visibility
+        nextButton.style.opacity = songIndex + 1 === playlists[currentAlbum].songs.length ? "0" : "1";
+        prevButton.style.opacity = songIndex === 0 ? "0" : "1";
 
         currentSongIndex = songIndex;
 
@@ -51,40 +93,43 @@ document.addEventListener("DOMContentLoaded", function () {
             dot.classList.toggle("active", index === currentSongIndex);
         });
 
-        changeAudioSource(playlists[currentAlbum].songs[currentSongIndex])
+        changeAudioSource(playlists[currentAlbum].songs[currentSongIndex].track)
+        currentlyPlaying.innerHTML = playlists[currentAlbum].songs[currentSongIndex].title
     }
 
-    function replaceDots() {
-        const carouselDots = document.querySelector(".carousel-dots");
-
-        // Clear existing dots
-        carouselDots.innerHTML = "";
-
-        let numDots = playlists[currentAlbum].songs.length
-
-        // Add the specified number of dots
-        for (let i = 1; i <= numDots; i++) {
-            const dot = document.createElement("span");
-            dot.className = "dot";
-            // Make the first dot active
-            if (i === 1) {
-                dot.classList.add("active");
-            }
-            dot.addEventListener("click", () => {
-                changeSong(currentAlbum, i-1)
-            })
-            carouselDots.appendChild(dot);
-        }
-    }
+    // function replacePlaylist() {
+    //     const carouselDots = document.querySelector(".playlist");
+    //
+    //     // Clear existing dots
+    //     carouselDots.innerHTML = "";
+    //
+    //     let numDots = playlists[currentAlbum].songs.length
+    //
+    //     // Add the specified number of dots
+    //     for (let i = 0; i < numDots; i++) {
+    //         const dot = document.createElement("li");
+    //         dot.className = "dot";
+    //         // Make the first dot active
+    //         if (i === 0) {
+    //             dot.classList.add("active");
+    //         }
+    //         dot.innerHTML = playlists[currentAlbum].songs[i].title
+    //         dot.addEventListener("click", () => {
+    //             changeSong(currentAlbum, i)
+    //         })
+    //         carouselDots.appendChild(dot);
+    //     }
+    //
+    // }
 
     // Event listener for previous button
-    document.querySelector(".prev-button").addEventListener("click", () => {
+    prevButton.addEventListener("click", () => {
         let newSong = (currentSongIndex - 1 + playlists[currentAlbum].songs.length) % playlists[currentAlbum].songs.length;
         changeSong(currentAlbum, newSong);
     });
 
     // Event listener for next button
-    document.querySelector(".next-button").addEventListener("click", () => {
+    nextButton.addEventListener("click", () => {
         let newSong = (currentSongIndex + 1 + playlists[currentAlbum].songs.length) % playlists[currentAlbum].songs.length;
         changeSong(currentAlbum, newSong);
     });
@@ -129,11 +174,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize the carousel
     changeSong(0, 0);
 
-    document.querySelectorAll('.sticker').forEach(function (sticker) {
+    document.querySelectorAll('.carousel-slide').forEach(function (sticker) {
         sticker.addEventListener('click', function () {
-            if (sticker.parentElement) {
-                sticker.parentElement.classList.toggle("flipped")
-            }
+            sticker.classList.toggle("flipped")
         });
     });
 

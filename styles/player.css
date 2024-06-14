@@ -1,27 +1,46 @@
-main.listen {
+.listen {
     padding: 10px;
-    max-width: 40vh;
     margin: 0 auto;
+}
+
+.hr {
+    margin: 20px;
+    border-bottom: 2px solid black;
+}
+
+.listen .postcard-border {
+    border: double black 6px;
+    padding: 10px;
+}
+
+.listen .postcard {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+
+    /*background-color: black;*/
 }
 
 .carousel-container {
     overflow: hidden;
+    max-width: 50vh;
 }
 
 .carousel {
     display: flex;
-    transition: transform 0.3s ease;
+    transition: transform 0.8s ease;
     perspective: 1000px;
 }
 
 .carousel-slide {
     position: relative;
     flex: 0 0 100%;
-    border-radius: 3%;
     overflow: hidden;
 }
 
 .carousel-slide .sticker {
+    display: none;
     bottom: -50px;
     right: -50px;
     width: 100px;
@@ -44,7 +63,7 @@ main.listen {
 
     transform-style: preserve-3d;
     transition: transform 0.5s;
-    backface-visibility: hidden;
+    /*backface-visibility: hidden;*/
 }
 
 .carousel-slide .verso {
@@ -57,22 +76,20 @@ main.listen {
 
     padding: 5%;
 
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transform: rotateY(-180deg);
-    transition: transform 0.5s;
-}
+    transition: opacity 0.5s ease;
+    opacity: 0;
 
-.carousel-slide.flipped img {
-    transform: rotateY(180deg);
+    background-color: black;
+    color: white;
 }
 
 .carousel-slide.flipped .verso {
-    transform: rotateY(0deg);
+    opacity: 100%;
 }
 
 .player {
     display: flex;
+    /*display: none;*/
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -82,8 +99,6 @@ main.listen {
     background: none;
     cursor: pointer;
     border: none;
-
-    border-radius: 50%;
 }
 
 .player button svg {
@@ -106,38 +121,60 @@ main.listen {
 }
 
 .dot {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-color: #333;
-    border-radius: 50%;
     margin: 0 10px;
     cursor: pointer;
 }
 
 .dot.active {
-    background-color: #c80000;
+    height: 120%;
+}
+
+.scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.listen .scroll-container {
+    max-width: 90vw;
+    box-sizing: border-box;
+}
+
+@media (pointer: coarse) {
+    .scroll-container {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+
+    .scroll-container::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
 }
 
 .thumbnails {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    font-family: 'oldstyle-sc', monospace;
+    font-size: 23px;
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+
+    display: flex; /* Use flexbox to arrange items inline */
+    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
 }
 
 .thumbnail {
     margin: 0 10px;
     cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
 }
 
-.thumbnail img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover; /* Maintain aspect ratio and cover the entire square */
-    border: 2px solid #333;
-    border-radius: 5px;
+.thumbnail:after {
+    content: "‡";
+    font-size: 15px;
 }
 
-.thumbnail img:hover {
-    border-color: #666;
+.currently-playing {
+    text-align: right;
+    margin: 0;
+    font-style: italic;
 }

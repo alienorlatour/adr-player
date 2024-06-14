@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="lyre.ico">
+    <link rel="icon" type="image/x-icon" href="styles/lyre.ico">
     <title>AdR</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="player.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/overlay.css">
+    <link rel="stylesheet" href="styles/player.css">
 </head>
 <body>
+
+<div id="overlay">
+    <div class="overlay-content">
+        <img src="img/pub.gif" alt="Ceci n'est pas une bannière de cookies.">
+        <div class="close-button" onclick="closeOverlay()"></div>
+    </div>
+</div>
+
 <header>
     <div class="logo">
         <img src="logo.png" alt="Logo">
@@ -23,97 +32,207 @@
     </div>
 </header>
 
-<nav class="menu">
+<nav class="menu scroll-container">
     <ul>
-        <li><a href="index.html" class="active"><img src="logo.png" alt="Écouter"></a></li>
+        <li><a href="index.html" class="active"><img src="styles/listen-menu.png" alt="Écouter"></a></li>
         <li><a href="presentation.html">Présentation</a></li>
         <li><a href="reflexions.html">Réflexions</a></li>
         <li><a href="programmes.html">Programmes</a></li>
-        <li><a href="galerie.html">Galerie</a></li>
     </ul>
 </nav>
 
-<main class="listen">
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-slide">
-                <img src="brahms/cover.jpg" alt="Brahms">
-                <div class="verso" style="background-color: #c80000;"><p>St. agur blue cheese cheese triangles cheesy grin. Manchego squirty cheese when the
-                    cheese comes out everybody's happy
-                    stilton cheese slices caerphilly roquefort manchego. Roquefort cheddar roquefort cheesy feet rubber cheese melted cheese mascarpone
-                    emmental. Stinking bishop happy dolcelatte macaroni cheese airedale cheesecake cheese strings smelly cheese gouda. Macaroni cheese
-                    stilton babybel cheesy feet.</p>
+<div class="listen">
+    <div class="scroll-container">
+        <ul class="thumbnails">
+            <li class="thumbnail">
+                Brahms
+            </li>
+            <li class="thumbnail">
+                Liszt
+            </li>
+            <li class="thumbnail">
+                Chopin
+            </li>
+            <li class="thumbnail">
+                Beethoven
+            </li>
+        </ul>
+    </div>
+
+    <div class="postcard-border">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="music/01rouge/cover.png" alt="Brahms">
+                    <div class="verso">
+                        <p>Premier mouvement</p>
+                        <p>Deuxième mouvement</p>
+                        <p>Troisième mouvement qui prend un peu plus de place</p>
+                    </div>
+                    <button class="sticker"></button>
                 </div>
-                <button class="sticker"></button>
-            </div>
-            <div class="carousel-slide">
-                <img src="podcast/cover.png" alt="Podcasts">
-                <div class="verso" style="background-color: #222; color: white;">
-                    <p>Monterey jack rubber cheese pecorino. Stilton paneer cheesy grin blue castello cottage cheese when the cheese comes out everybody's
-                        happy
-                        pepper jack cream cheese. Cheese triangles parmesan cheeseburger mascarpone cow macaroni cheese caerphilly macaroni cheese. When the
-                        cheese comes out everybody's happy dolcelatte macaroni cheese airedale cheesecake cheese strings smelly cheese gouda. Macaroni
+                <div class="carousel-slide">
+                    <img src="music/02jaune/cover.png" alt="Podcasts">
+                    <div class="verso">
+                        <p>Monterey jack rubber cheese pecorino. Stilton paneer cheesy grin blue castello cottage cheese when the cheese comes out
+                            everybody's
+                            happy
+                            pepper jack cream cheese. Cheese triangles parmesan cheeseburger mascarpone cow macaroni cheese caerphilly macaroni cheese. When
+                            the
+                            cheese comes out everybody's happy dolcelatte macaroni cheese airedale cheesecake cheese strings smelly cheese gouda. Macaroni
+                            cheese
+                            stilton babybel cheesy feet.</p>
+                    </div>
+                    <button class="sticker"></button>
+                </div>
+                <div class="carousel-slide">
+                    <img src="music/03violet/cover.png" alt="Other">
+                    <div class="verso"><p>St. agur blue cheese cheese triangles cheesy grin. Manchego squirty
                         cheese
-                        stilton babybel cheesy feet.</p>
+                        when the cheese comes out everybody's happy
+                        stilton cheese slices caerphilly roquefort manchego. Roquefort cheddar roquefort cheesy feet rubber cheese melted cheese mascarpone
+                        emmental. Stinking bishop blue castello cheese and wine rubber cheese mascarpone rubber cheese cauliflower cheese.</p>
+                    </div>
+                    <button class="sticker"></button>
                 </div>
-                <button class="sticker"></button>
-            </div>
-            <div class="carousel-slide">
-                <img src="other/cover.png" alt="Other">
-                <div class="verso" style="background-color: #222; color: white;"><p>St. agur blue cheese cheese triangles cheesy grin. Manchego squirty
-                    cheese
-                    when the cheese comes out everybody's happy
-                    stilton cheese slices caerphilly roquefort manchego. Roquefort cheddar roquefort cheesy feet rubber cheese melted cheese mascarpone
-                    emmental. Stinking bishop blue castello cheese and wine rubber cheese mascarpone rubber cheese cauliflower cheese.</p>
+                <div class="carousel-slide">
+                    <img src="music/04vert/cover.png" alt="Other">
+                    <div class="verso"><p>St. agur blue cheese cheese triangles cheesy grin. Manchego squirty
+                        cheese
+                        when the cheese comes out everybody's happy
+                        stilton cheese slices caerphilly roquefort manchego. Roquefort cheddar roquefort cheesy feet rubber cheese melted cheese mascarpone
+                        emmental. Stinking bishop blue castello cheese and wine rubber cheese mascarpone rubber cheese cauliflower cheese.</p>
+                    </div>
+                    <button class="sticker"></button>
                 </div>
-                <button class="sticker"></button>
             </div>
         </div>
     </div>
-
+    <p class="currently-playing">
+        Brahms
+    </p>
     <div class="player">
         <button class="prev-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24">
-                <path fill="black" d="M 12 5 v 14 l -11 -7 Z M 18 5 v 14 l -11 -7 Z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
+                <path stroke="black" fill="none" d="M 12 5 v 14 l -11 -7 Z M 18 5 v 14 l -11 -7 Z"/>
             </svg>
         </button>
         <div class="play-pause-button">
             <button class="play-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 24 24">
-                    <path fill="black" d="M8 5v14l11-7z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24">
+                    <path stroke="black" fill="none" d="M8 5v14l11-7z"/>
                 </svg>
             </button>
             <button class="pause-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 24 24">
-                    <path fill="black" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24">
+                    <path stroke="black" fill="none" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
                 </svg>
             </button>
         </div>
         <button class="next-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24">
-                <path fill="black" d="M 5 5 v 14 l 11 -7 Z M 11 5 v 14 l 11 -7 Z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
+                <path stroke="black" fill="none" d="M 5 5 v 14 l 11 -7 Z M 11 5 v 14 l 11 -7 Z"/>
             </svg>
         </button>
     </div>
-    <div class="carousel-dots">
-        <!-- Dynamically generated -->
-    </div>
-    <div class="thumbnails">
-        <div class="thumbnail">
-            <img src="brahms/cover.jpg" alt="Thumbnail 1">
-        </div>
-        <div class="thumbnail">
-            <img src="podcast/cover.png" alt="Thumbnail 2">
-        </div>
-        <div class="thumbnail">
-            <img src="other/cover.png" alt="Thumbnail 2">
-        </div>
-    </div>
+</div>
 
-</main>
+<div class="hr"></div>
+
+<div class="content-text">
+    <div class="column">
+        <h3>L’Armée des Romantiques</h3>
+        <h4>ou parler d’art d’une façon partiale, passionnée et politique</h4>
+
+        <p>Il est toujours difficile de se présenter sans avoir la désagréable impression de se vendre.</p>
+
+        <p>Vincent Mons, notre cher camarade et ingénieur du son, a dit un jour de nous : « Le projet révolutionnaire de L’Armée des Romantiques peut ainsi se
+            comprendre dans une puissante simplicité, par le souhait de dire quelque chose sur la société invoquant le réel de l’aujourd’hui et de l’humain&nbsp;».</p>
+        <p>Cette phrase, que nous pouvons l’entendre dire dans l’épisode 9 des « Podcasts de L’Armée des Romantiques », pourrait en déstabiliser plus d’un tant
+            il est peu habituel qu’un ensemble de musique classique puisse évoquer la vie de la cité et prétendre y prendre part en l’analysant sous l’angle de
+            la production matérielle et économique.</p>
+        <p>Mais est-ce le rôle des artistes que de s’occuper de politique ? Poser la question c’est évidement y répondre.</p>
+    </div>
+    <div class="column">
+        <p>L’artiste est souvent associé à la notion même de liberté. Mais comment créer librement sur le plan artistique sans être conscient de l’état de
+            subordination qui règne chez les artistes ?</p>
+        <p>Cette quête de liberté ne date pas d’hier. La revendiquer aujourd’hui comme condition nécessaire à tout acte de création, nous invite à ouvrir les
+            yeux sur
+            les structures de domination qui financent le milieu musical classique : mécénat et marché public des subventions. Si nous savons faire la
+            différence entre
+            ces deux institutions, nous savons également que les artistes n’ont aucun pouvoir décisionnel sur ces structures. Alors comment débattre sereinement
+            entre
+            nous sur les enjeux esthétiques de l’art si notre survie économique dépend de décideurs extérieurs ?</p>
+        <p>Comme vous le voyez le milieu de la musique classique n’échappe pas aux enjeux des conditions matérielles, contrairement aux images d’Épinal qui nous
+            font
+            croire que les artistes seraient au delà des réalités du champ social.</p>
+        <p>C’est pour cela que L’Armée des Romantiques n’hésite pas à reprendre à son compte la phrase de Baudelaire : « Parler d’art d’une façon partiale,
+            passionnée, et politique » .</p>
+    </div>
+    <div class="column">
+        <p>L’Armée des Romantiques est un ensemble musical basé à Marseille. Son champ d’expression est la musique classique ou plus précisément la musique
+            romantique
+            jouée sur instruments historiques. Elle mène une analyse profonde sur l’esthétique romantique qui est aujourd’hui masquée par celle du
+            néoclassicisme.</p>
+
+        <img src="img/manu.webp" alt="Rémi Cardinale">
+
+        <p>Son activité ne se limite pas aux concerts et aux disques. Sur ce site vous aurez accès gratuitement à tout ce que nous produisons : des podcasts,
+            des
+            vidéos, des enregistrements, des articles. Cet acte de gratuité nous est apparu comme la seule manière de produire librement. Sans devoir aller
+            quémander
+            sur le marché actuel de la musique qu’un producteur accepte de nous acheter, voire d’alimenter la rente capitaliste des plateformes collaboratives
+            (comme
+            cela est la norme aujourd’hui).</p>
+
+    </div>
+    <div class="column">
+        <p>Mais cette production a un coût !</p>
+        <p>Si vous aimez notre travail et surtout si vous souhaitez voir, entendre et lire d’autres productions de L’Armée des Romantiques, vous pouvez nous
+            soutenir
+            financièrement en faisant un don. La sécurité sociale de la culture n’étant pas encore à l’ordre du jour (même si nous y travaillons collectivement
+            au sein
+            d’une autre structure), le financement direct par un public conscient des enjeux vertueux de la culture et des arts pour notre société, nous
+            apparait comme
+            la seule alternative économique à court et moyen termes.</p>
+        <p>En espérant que cette présentation, certes iconoclaste, mais sincère, vous donnera l’envie de découvrir L’Armée des Romantiques.</p>
+
+    </div>
+    <div class="column">
+        <p>C’est sous la bannière de L'Armée des Romantiques que se sont rassemblés des compagnons fidèles tels que la mezzo contre-alto Lucie Roche, le
+            violoniste Girolamo Bottiglieri le violoncelliste Emmanuel Balssa, l’altiste Caroline Cohen-Adad, le pianiste Rémy Cardinale et l’ingénieur du son
+            Vincent Mons. Cette Armée bien singulière a pour ambition de réinterpréter les chefs d’œuvres de la musique de chambre du XIXe siècle sur
+            instruments historiques, en
+            repositionnant cette musique novatrice dans le contexte intellectuel et artistique de l’époque.</p>
+
+        <p>Les programmes des concerts de l’Armée des Romantiques visent à restituer l’atmosphère d’effervescence, de découverte et les débats passionnés qui
+            animèrent
+            tout le XIXe siècle. Dans cet esprit, le concert donne lieu à des commentaires et des explications par les interprètes sur le contexte historique,
+            les
+            partitions et les instruments, favorisant une écoute instruite entre les musiciens et le public.</p>
+    </div>
+    <div class="column">
+        <p>L’Armée des Romantiques affirme son engagement pour l’interprétation sur instruments historiques qui s’avère être la seule réponse crédible pour
+            rendre la
+            modernité des œuvres jouées. Notre pratique régulière des instruments anciens nous amène à nous interroger sur l’héritage transmis par le XXème
+            siècle.
+            Leurs sonorités, leurs couleurs, leurs dynamiques, bousculent nos propres habitudes et certitudes sur l’interprétation des œuvres. Ce nouveau prisme
+            sonore
+            qu’offrent les instruments anciens, réactive notre écoute, bouleverse nos attentes et redonne une nouvelle jeunesse à un répertoire parfois figé
+            dans le
+            temps.</p>
+
+        <p>L'Armée des Romantiques est convaincue de l'importance qu'il y a de donner un autre sens à notre art. Les dérives actuelles que sont l'ultra
+            médiatisation,
+            le culte de la personnalité, la logique des modes, sont autant d'artifices qui nous empêchent de repenser l'art d'une manière sereine. La subversion
+            à
+            laquelle nous appelons, passera par une autre façon d’aborder le concert et par là, rendre l’écoute plus active, plus passionnée, plus joviale, plus
+            réfléchie… Gageons que notre envie rende notre art un peu plus désirable pour le plus grand nombre.</p>
+    </div>
+</div>
 
 <audio id="audioPlayer" controls style="display: none">
-    <source src="brahms/frank1.mp3" type="audio/mpeg">
+    <source src="music/01rouge/frank1.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
@@ -122,5 +241,10 @@
 </footer>
 
 <script src="nav.js"></script>
+<script>
+    function closeOverlay() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
 </body>
 </html>

@@ -1,10 +1,22 @@
+@font-face {
+    font-family: 'oldstyle';
+    src: url("oldstyle.ttf");
+}
+
+@font-face {
+    font-family: 'oldstyle-sc';
+    src: url("oldstyle-sc.ttf");
+}
+
 body {
     margin: 0;
-    font-family: monospace;
+    font-family: 'oldstyle', monospace;
 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    background-color: #fef8e8;
 }
 
 header h1, header h2 {
@@ -16,10 +28,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 20px 5px 20px;
+    margin: 20px 20px 0px 20px;
 
-    border-top: #222 3px solid;
-    border-bottom: #222 3px solid;
+    border-top: black 6px double;
+    border-bottom: black 6px double;
 }
 
 header .title-wrapper {
@@ -35,7 +47,6 @@ header .title-wrapper .main-title {
 
 header .title-wrapper .subtitle {
     font-size: 25px;
-    color: #666;
 }
 
 @media screen and (min-width: 760px) {
@@ -47,9 +58,7 @@ header .title-wrapper .subtitle {
 }
 
 .logo img {
-    max-width: 90px;
-
-    /* bidouille */
+    max-width: 80px;
     margin-bottom: -4px;
 }
 
@@ -67,13 +76,28 @@ header .title-wrapper .subtitle {
     }
 }
 
-/* NAV */
+@media screen and (max-width: 670px) {
+    header .title-wrapper .main-title {
+        font-size: 30px;
+    }
+
+    header .title-wrapper .subtitle {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header .logo img {
+        display: none;
+    }
+}
+
+/* NAV **************************/
 
 .menu {
     margin: 0 20px 30px 20px;
     text-align: center;
-    border-bottom: 2px solid #222;
-    border-top: 2px solid #222;
+    border-bottom: 2px solid black;
 }
 
 .menu ul {
@@ -85,52 +109,57 @@ header .title-wrapper .subtitle {
 
 .menu li {
     display: inline-block;
-    font-size: 12px;
-    border-right: 1px solid #ccc;
-}
-
-.menu li:first-child {
-    border-left: 1px solid #ccc;
-    padding: 0 3px;
-}
-
-.menu li a.active {
-    border-bottom: 3px black solid;
-    margin-bottom: -3px;
-}
-
-.menu li img {
-    height: 28px;
-    margin: -8px;;
+    font-size: 15px;
 }
 
 .menu a {
     display: block;
-    padding: 10px;
+    padding: 10px 20px;
     text-decoration: none;
-    color: #333;
+    color: black;
+}
+
+.menu li a.active {
+    color: #c80000;
 }
 
 .menu li a:hover {
-    background-color: #e0e0e0;
+    color: #c80000;
 }
 
-/**** main ****/
+.menu li:first-child {
+    padding: 0 3px;
+}
 
-main {
+/* lyre menu */
+.menu li:first-child img {
+    width: 17px;
+    height: 28px;
+    margin: -8px;
+
+    object-fit: cover;
+    object-position: left;
+}
+
+.menu li:first-child:hover a img,
+.menu li:first-child a.active img {
+    object-position: right;
+}
+
+/**** text ****/
+.content-text {
     flex-grow: 1;
-}
-
-main.content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; /* Adjust the gap between columns */
-    max-width: 1000px; /* Maximum width of the columns */
+    gap: 30px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 30px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.column {
+.content-text .column {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,7 +167,7 @@ main.content {
     padding-bottom: 5px;
 }
 
-main.content img {
+.content-text img {
     width: 100%;
 }
 
