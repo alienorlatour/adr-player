@@ -12,12 +12,12 @@
 </head>
 <body>
 
-<div id="overlay">
-    <div class="overlay-content">
-        <img src="img/pub.gif" alt="Ceci n'est pas une bannière de cookies.">
-        <div class="close-button" onclick="closeOverlay()"></div>
-    </div>
-</div>
+<!--<div id="overlay">-->
+<!--    <div class="overlay-content">-->
+<!--        <img src="img/pub.gif" alt="Ceci n'est pas une bannière de cookies.">-->
+<!--        <div class="close-button" onclick="closeOverlay()"></div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <header>
     <div class="logo">
@@ -32,114 +32,57 @@
     </div>
 </header>
 
-<nav class="menu scroll-container">
-    <ul>
-        <li><a href="index.html" class="active"><img src="styles/listen-menu.png" alt="Écouter"></a></li>
-        <li><a href="presentation.html">Présentation</a></li>
-        <li><a href="reflexions.html">Réflexions</a></li>
-        <li><a href="programmes.html">Programmes</a></li>
-    </ul>
-</nav>
-
-<div class="listen">
-    <div class="scroll-container">
-        <ul class="thumbnails">
-            <li class="thumbnail">
-                Brahms
-            </li>
-            <li class="thumbnail">
-                Liszt
-            </li>
-            <li class="thumbnail">
-                Chopin
-            </li>
-            <li class="thumbnail">
-                Beethoven
-            </li>
-        </ul>
-    </div>
-
-    <div class="postcard-border">
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-slide">
-                    <img src="music/01rouge/cover.png" alt="Brahms">
-                    <div class="verso">
-                        <p>Premier mouvement</p>
-                        <p>Deuxième mouvement</p>
-                        <p>Troisième mouvement qui prend un peu plus de place</p>
-                    </div>
-                    <button class="sticker"></button>
-                </div>
-                <div class="carousel-slide">
-                    <img src="music/02jaune/cover.png" alt="Podcasts">
-                    <div class="verso">
-                        <p>Monterey jack rubber cheese pecorino. Stilton paneer cheesy grin blue castello cottage cheese when the cheese comes out
-                            everybody's
-                            happy
-                            pepper jack cream cheese. Cheese triangles parmesan cheeseburger mascarpone cow macaroni cheese caerphilly macaroni cheese. When
-                            the
-                            cheese comes out everybody's happy dolcelatte macaroni cheese airedale cheesecake cheese strings smelly cheese gouda. Macaroni
-                            cheese
-                            stilton babybel cheesy feet.</p>
-                    </div>
-                    <button class="sticker"></button>
-                </div>
-                <div class="carousel-slide">
-                    <img src="music/03violet/cover.png" alt="Other">
-                    <div class="verso"><p>St. agur blue cheese cheese triangles cheesy grin. Manchego squirty
-                        cheese
-                        when the cheese comes out everybody's happy
-                        stilton cheese slices caerphilly roquefort manchego. Roquefort cheddar roquefort cheesy feet rubber cheese melted cheese mascarpone
-                        emmental. Stinking bishop blue castello cheese and wine rubber cheese mascarpone rubber cheese cauliflower cheese.</p>
-                    </div>
-                    <button class="sticker"></button>
-                </div>
-                <div class="carousel-slide">
-                    <img src="music/04vert/cover.png" alt="Other">
-                    <div class="verso"><p>St. agur blue cheese cheese triangles cheesy grin. Manchego squirty
-                        cheese
-                        when the cheese comes out everybody's happy
-                        stilton cheese slices caerphilly roquefort manchego. Roquefort cheddar roquefort cheesy feet rubber cheese melted cheese mascarpone
-                        emmental. Stinking bishop blue castello cheese and wine rubber cheese mascarpone rubber cheese cauliflower cheese.</p>
-                    </div>
-                    <button class="sticker"></button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <p class="currently-playing">
-        Brahms
-    </p>
-    <div class="player">
-        <button class="prev-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
-                <path stroke="black" fill="none" d="M 12 5 v 14 l -11 -7 Z M 18 5 v 14 l -11 -7 Z"/>
+<div class="listen paused">
+    <audio id="audioPlayer" controls style="display: none">
+        <source src="music/01rouge/frank1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="play-pause-button">
+        <button class="play-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24">
+                <path stroke="black" fill="none" d="M8 5v14l11-7z"/>
             </svg>
         </button>
-        <div class="play-pause-button">
-            <button class="play-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24">
-                    <path stroke="black" fill="none" d="M8 5v14l11-7z"/>
-                </svg>
-            </button>
-            <button class="pause-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24">
-                    <path stroke="black" fill="none" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                </svg>
-            </button>
-        </div>
-        <button class="next-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
-                <path stroke="black" fill="none" d="M 5 5 v 14 l 11 -7 Z M 11 5 v 14 l 11 -7 Z"/>
+        <button class="pause-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24">
+                <path stroke="black" fill="none" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
             </svg>
         </button>
+    </div>
+    <div class="marquee">
+        <span class="currently-playing">
+            Brahms bablablabalbalbalbalbalbal
+        </span>
+    </div>
+    <button class="next-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
+            <path stroke="black" fill="none" d="M 5 5 v 14 l 11 -7 Z M 11 5 v 14 l 11 -7 Z"/>
+        </svg>
+    </button>
+    <div class="cover">
+        <a href="#cdtheque" data-file="cdtheque.html">
+            <img src="music/01rouge/cover.png" alt="page de téléchargement de la musique">
+        </a>
     </div>
 </div>
 
-<div class="hr"></div>
+<nav class="nav-links">
+    <a href="#presentation" data-file="presentation.html">
+        <span>La démarche de l'Armée des Romantiques</span>
+        <span>1</span>
+    </a>
+    <a href="#banniere" data-file="banniere.html">
+        <span>La bannière qui nous rassemble</span>
+        <span>2</span>
+    </a>
+    <a href="#reflexions" data-file="reflexions.html">
+        <span>De l'interprétation sur instruments anciens</span>
+        <span>3</span>
+    </a>
+</nav>
 
-<div class="content-text">
+
+<main class="content-text">
     <div class="column">
         <h3>L’Armée des Romantiques</h3>
         <h4>ou parler d’art d’une façon partiale, passionnée et politique</h4>
@@ -229,17 +172,19 @@
             laquelle nous appelons, passera par une autre façon d’aborder le concert et par là, rendre l’écoute plus active, plus passionnée, plus joviale, plus
             réfléchie… Gageons que notre envie rende notre art un peu plus désirable pour le plus grand nombre.</p>
     </div>
-</div>
+</main>
 
-<audio id="audioPlayer" controls style="display: none">
-    <source src="music/01rouge/frank1.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+<!--<div class="nav-buttons">-->
+<!--    <button id="prevButton">Previous</button>-->
+<!--    <button id="nextButton">Next</button>-->
+<!--</div>-->
 
 <footer>
-    <p>Cupcake ipsum dolor sit amet dragée. Lemon drops sweet cake gummies jelly jelly-o macaroon marzipan sweet roll.</p>
+    <p>Cupcake ipsum dolor sit amet dragée. Lemon drops sweet cake gummies jelly jelly-o macaroon marzipan sweet roll. <a href="mailto:armee@armee.fr">Contactez-nous</a>
+    </p>
 </footer>
 
+<script src="music/player.js"></script>
 <script src="nav.js"></script>
 <script>
     function closeOverlay() {

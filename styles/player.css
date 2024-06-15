@@ -1,180 +1,55 @@
 .listen {
-    padding: 10px;
-    margin: 0 auto;
-}
-
-.hr {
-    margin: 20px;
+    margin: 0 20px 30px 20px;
     border-bottom: 2px solid black;
-}
 
-.listen .postcard-border {
-    border: double black 6px;
-    padding: 10px;
-}
-
-.listen .postcard {
     display: flex;
-    flex-direction: column;
-
-    padding: 10px;
-
-    /*background-color: black;*/
-}
-
-.carousel-container {
-    overflow: hidden;
-    max-width: 50vh;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.8s ease;
-    perspective: 1000px;
-}
-
-.carousel-slide {
-    position: relative;
-    flex: 0 0 100%;
-    overflow: hidden;
-}
-
-.carousel-slide .sticker {
-    display: none;
-    bottom: -50px;
-    right: -50px;
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.5);
-    transform: rotate(-45deg);
-    cursor: pointer;
-    position: absolute;
-    border: none;
-}
-
-.carousel-slide .sticker:active {
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    /*backface-visibility: hidden;*/
-}
-
-.carousel-slide .verso {
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90%;
-    height: 90%;
-
-    padding: 5%;
-
-    transition: opacity 0.5s ease;
-    opacity: 0;
-
-    background-color: black;
-    color: white;
-}
-
-.carousel-slide.flipped .verso {
-    opacity: 100%;
-}
-
-.player {
-    display: flex;
-    /*display: none;*/
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    width: 100%;
 }
 
-.player button {
+.listen button {
     background: none;
     cursor: pointer;
     border: none;
 }
 
-.player button svg {
-    opacity: 75%;
+.listen .marquee {
+    flex: 1;
+    padding: 5px;
 }
 
-.play-pause-button .pause-icon {
+.listen .cover img {
+    max-height: 46px;
+    margin-bottom: -5px;
+}
+
+/************ paused *********************/
+
+.listen.paused {
+
+}
+
+.listen.paused .play-pause-button button.pause-button,
+.listen.paused .next-button {
     display: none;
 }
 
-.play-pause-button .play-icon {
+.listen.paused .play-pause-button button.play-button {
     display: block;
 }
 
-/*******************/
 
-.carousel-dots {
-    text-align: center;
-    margin-top: 20px;
+/************ playing ********************/
+
+.listen.playing {
+
 }
 
-.dot {
-    margin: 0 10px;
-    cursor: pointer;
+.listen.playing .play-pause-button button.pause-button,
+.listen.playing .next-button {
+    display: block;
 }
 
-.dot.active {
-    height: 120%;
-}
-
-.scroll-container {
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
-.listen .scroll-container {
-    max-width: 90vw;
-    box-sizing: border-box;
-}
-
-@media (pointer: coarse) {
-    .scroll-container {
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* Internet Explorer 10+ */
-    }
-
-    .scroll-container::-webkit-scrollbar {
-        display: none; /* Safari and Chrome */
-    }
-}
-
-.thumbnails {
-    font-family: 'oldstyle-sc', monospace;
-    font-size: 23px;
-    list-style-type: none;
-    margin: 10px;
-    padding: 0;
-
-    display: flex; /* Use flexbox to arrange items inline */
-    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
-}
-
-.thumbnail {
-    margin: 0 10px;
-    cursor: pointer;
-    display: inline-block;
-    white-space: nowrap;
-}
-
-.thumbnail:after {
-    content: "‡";
-    font-size: 15px;
-}
-
-.currently-playing {
-    text-align: right;
-    margin: 0;
-    font-style: italic;
+.listen.playing .play-pause-button button.play-button {
+    display: none;
 }
