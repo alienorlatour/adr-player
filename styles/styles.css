@@ -16,7 +16,10 @@ body {
     flex-direction: column;
     min-height: 100vh;
 
-    background-color: #fef8e8;
+    font-size: 120%;
+
+    /*background-color: #fef8e8;*/
+    background-color: #fefef4;
 }
 
 header h1, header h2 {
@@ -32,12 +35,6 @@ header {
 
     border-top: black 6px double;
     border-bottom: black 6px double;
-
-    /*background: linear-gradient(45deg, #c80000, #ff00ff);*/
-    /*position: fixed;*/
-    /*right: 0;*/
-    /*left: 0;*/
-    /*top: 0;*/
 }
 
 header .title-wrapper {
@@ -60,6 +57,7 @@ header .title-wrapper .subtitle {
     header .title-wrapper .subtitle:after {
         content: "════════";
         padding: 0 10px;
+        color: #c80000;
     }
 }
 
@@ -110,7 +108,7 @@ header .title-wrapper .subtitle {
 }
 
 .nav-links a {
-    display: block;
+    display: flex;
     text-decoration: none;
     padding: 10px;
     color: black;
@@ -118,8 +116,18 @@ header .title-wrapper .subtitle {
     position: relative;
 }
 
-.nav-links a span:last-child {
-    float: right;
+.nav-links a span.fill {
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+p.hr {
+    text-align: center;
+    margin: 40px 0;
+}
+
+p.hr img {
+    height: 30px;
 }
 
 /**** text ****/
@@ -145,6 +153,16 @@ header .title-wrapper .subtitle {
 
 .content-text img {
     width: 100%;
+}
+
+.content-text h3 {
+    margin-bottom: 0;
+    font-size: 30px;
+}
+
+.content-text h4 {
+    margin-top: 0;
+    text-align: center;
 }
 
 /***** foot ********/

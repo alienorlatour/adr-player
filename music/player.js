@@ -4,7 +4,7 @@ const playlist = {
             "track": "music/01rouge/frank1.mp3",
             "title": "Brahms - Un titre très long avec les noms des mouvements et le numéro 259",
             "colour": "#c80000",
-            "cover": "music/01rouge/cover.png"
+            "cover": "logo-rouge.png"
         },
         {
             "track": "music/01rouge/frank2.mp3",
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cover = document.querySelector(".listen .cover img")
 
     // Toggle play/pause functionality and button visibility
-    let isPlaying = false;
+    let isPlaying = true;
 
     let currentSongIndex = 0;
 
