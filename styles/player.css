@@ -7,6 +7,9 @@
     align-items: center;
 
     background: linear-gradient(45deg, #c80000, #c80000, #c80000, #000);
+
+    position: sticky;
+    top: 0;
 }
 
 .listen button {
