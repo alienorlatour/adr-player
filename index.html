@@ -12,12 +12,12 @@
 </head>
 <body>
 
-<div id="overlay">
-    <div class="overlay-content">
-        <img src="img/pub.gif" alt="Ceci n'est pas une bannière de cookies.">
-        <div class="close-button" onclick="closeOverlay()"></div>
-    </div>
-</div>
+<!--<div id="overlay">-->
+<!--    <div class="overlay-content">-->
+<!--        <img src="img/pub.gif" alt="Ceci n'est pas une bannière de cookies.">-->
+<!--        <div class="close-button" onclick="closeOverlay()"></div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <header>
     <div class="logo">
@@ -56,12 +56,17 @@
     </button>
     <div class="marquee">
         <span class="currently-playing">
-            Brahms bablablabalbalbalbalbalbal
+            Commencez par cliquer
         </span>
     </div>
-    <div class="cover" style="display: none">
+    <div class="donate">
         <a href="#cdtheque" data-file="cdtheque.html">
-            <img src="logo-rouge.png" alt="page de téléchargement de la musique">
+            <span></span>
+            <ion-icon name="download-outline"></ion-icon>
+        </a>
+        <a target="_blank" href="http://www.helloasso.fr" data-file="cdtheque.html">
+            <span>Faire un don</span>
+            <ion-icon name="heart-circle-outline"></ion-icon>
         </a>
     </div>
 </div>
@@ -76,15 +81,21 @@
         <span>2</span>
     </a>
     <a href="#banniere" data-file="banniere.html">
-        <span class="fill"><span>De l'interprétation sur instruments anciens</span></span>
+        <span class="fill"><span>Qui sommes-nous ?</span></span>
         <span>3</span>
     </a>
 </nav>
 
 <p class="hr">
-    <img src="img/youtube-logo-png-2092.png"><!--https://www.youtube.com/@armeedesromantiques4210-->
-    <img src="img/youtube-logo-png-2092.png"><!-- https://www.facebook.com/people/LArm%C3%A9e-des-Romantiques/100063210911573/ -->
-    <img src="img/youtube-logo-png-2092.png"><!--https://open.spotify.com/show/4tsEStlbNO1YrQkmCDDghu-->
+    <a target="_blank" href="https://www.youtube.com/@armeedesromantiques4210">
+        <ion-icon name="logo-youtube"></ion-icon>
+    </a>
+    <a target="_blank" href="https://www.facebook.com/people/LArm%C3%A9e-des-Romantiques/100063210911573/">
+        <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+    <a target="_blank" href="https://open.spotify.com/show/4tsEStlbNO1YrQkmCDDghu">
+        <ion-icon name="musical-notes-outline"></ion-icon>
+    </a>
 </p>
 
 <main class="content-text">
@@ -196,5 +207,7 @@
         document.getElementById('overlay').style.display = 'none';
     }
 </script>
+<script type="module" src="//unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="//unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

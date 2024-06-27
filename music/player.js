@@ -3,43 +3,43 @@ const playlist = {
         {
             "track": "music/01rouge/frank1.mp3",
             "title": "Brahms - Un titre très long avec les noms des mouvements et le numéro 259",
-            "colour": "#c80000",
+            "colour": "#EF1925",
             "cover": "logo-rouge.png"
         },
         {
             "track": "music/01rouge/frank2.mp3",
             "title": "Brahms - Un autre titre long avec les noms et le numéro de l'opus 658",
-            "colour": "#c80000",
+            "colour": "#EF1925",
             "cover": "music/01rouge/cover.png"
         },
         {
             "track": "music/01rouge/frank3.mp3",
-            "title": "Brahms - Titre un peu long long avec le numéro de l'opus 95",
-            "colour": "#c80000",
+            "title": "Brahms autre - Titre un peu long long avec le numéro de l'opus 95",
+            "colour": "#E6256C",
             "cover": "music/01rouge/cover.png"
         },
         {
             "track": "music/02jaune/lento.mp3",
             "title": "Liszt - La couleur jaune est souvent associée à la lumière et à la joie.",
-            "colour": "#ffd100",
+            "colour": "#FFEC01",
             "cover": "music/02jaune/cover.png"
         },
         {
             "track": "music/03violet/other1.mp3",
             "title": "Chopin - Le violet est une couleur associée à la créativité.",
-            "colour": "#7f1bce",
+            "colour": "#9936DF",
             "cover": "music/03violet/cover.png"
         },
         {
             "track": "music/03violet/other2.mp3",
             "title": "Chopin - Petit titre.",
-            "colour": "#7f1bce",
+            "colour": "#9936DF",
             "cover": "music/03violet/cover.png"
         },
         {
             "track": "music/04vert/lento.mp3",
             "title": "Beethoven - Le vert symbolise la nature, la croissance et la tranquillité.",
-            "colour": "#70cd1b",
+            "colour": "#4BB167",
             "cover": "music/04vert/cover.png"
         }
     ]
@@ -53,10 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const pauseButton = document.querySelector(".listen .pause-button");
     const listenContainer = document.querySelector(".listen")
     const nextButton = document.querySelector(".listen .next-button")
-    // const prevButton = document.querySelector(".listen .prev-button")
     const audio = document.getElementById("audioPlayer");
     const currentlyPlaying = document.querySelector(".listen .currently-playing")
-    const cover = document.querySelector(".listen .cover img")
 
     // Toggle play/pause functionality and button visibility
     let isPlaying = false;
@@ -71,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         changeAudioSource(song.track)
         currentlyPlaying.innerHTML = song.title
-        cover.src = song.cover
+        listenContainer.style.background = "linear-gradient(60deg, "+song.colour+" 75%, #000)"
+        console.log(">", listenContainer.style.background, ">>", song.colour)
     }
 
     function next() {

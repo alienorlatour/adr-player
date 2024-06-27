@@ -6,7 +6,7 @@
     justify-content: flex-start;
     align-items: center;
 
-    background: linear-gradient(45deg, #c80000, #c80000, #c80000, #000);
+    background: linear-gradient(60deg, #EF1925 75%, #000);
 
     position: sticky;
     top: 0;
@@ -23,9 +23,27 @@
     padding: 5px;
 }
 
-.listen .cover img {
-    max-height: 46px;
-    margin-bottom: -5px;
+.listen .donate a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.listen .donate a ion-icon {
+    font-size: 35px;
+}
+
+.listen .donate a span {
+    max-width: 0;
+    transition: max-width 0.5s ease-in-out;
+
+    text-wrap: nowrap;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.listen .donate a:hover span {
+    max-width: 300px;
 }
 
 /************ paused *********************/

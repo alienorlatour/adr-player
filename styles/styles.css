@@ -131,11 +131,25 @@ header .title-wrapper .subtitle {
 
 p.hr {
     text-align: center;
-    margin: 40px 0;
+    margin: 40px auto;
+
+    display: flex;
 }
 
-p.hr img {
-    height: 30px;
+p.hr a {
+    font-size: 25px;
+    color: white;
+
+    background-color: #EF1925;
+    width: 40px;
+    height: 40px;
+    border-radius: 25%;
+
+    margin: 0 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /**** text ****/
