@@ -59,9 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cover = document.querySelector(".listen .cover img")
 
     // Toggle play/pause functionality and button visibility
-    let isPlaying = true;
-
-    let currentSongIndex = 0;
+    let isPlaying = false;
 
     // Function to change the song and update the dot
     function changeSong(songIndex) {
@@ -69,8 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
             songIndex = 0
         }
 
-        currentSongIndex = songIndex;
-        let song = playlist.songs[currentSongIndex]
+        let song = playlist.songs[songIndex]
 
         changeAudioSource(song.track)
         currentlyPlaying.innerHTML = song.title
@@ -132,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
         listenContainer.classList.toggle("playing")
         listenContainer.classList.toggle("paused")
 
-        // You can add code to start/stop audio or video playback here
         if (isPlaying) {
             audio.play();
         } else {
@@ -150,6 +146,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     // Initial setup: Show the play button by default
     playButton.addEventListener("click", togglePlayPause);
     pauseButton.addEventListener("click", togglePlayPause);
@@ -160,5 +160,18 @@ document.addEventListener("DOMContentLoaded", function () {
     //     });
     // });
 
-    next();
+
+    document.addEventListener('click', playOnce);
+    document.addEventListener('keydown', playOnce);
+    document.addEventListener('touchstart', playOnce);
+    window.addEventListener('focus', playOnce);
+
+    function playOnce() {
+        next();
+        togglePlayPause();
+        document.removeEventListener('click', playOnce);
+        document.removeEventListener('keydown', playOnce);
+        document.removeEventListener('touchstart', playOnce);
+        window.removeEventListener('focus', playOnce);
+    }
 });

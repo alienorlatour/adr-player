@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to update visibility of prevButton and nextButton
     function updateButtonVisibility() {
-        document.getElementById('prevButton').style.display = currentIndex === 0 ? 'none' : 'inline-block';
-        document.getElementById('nextButton').style.display = currentIndex === posts.length - 1 ? 'none' : 'inline-block';
+        // document.getElementById('prevButton').style.display = currentIndex === 0 ? 'none' : 'inline-block';
+        // document.getElementById('nextButton').style.display = currentIndex === posts.length - 1 ? 'none' : 'inline-block';
     }
 
     // Load the content on initial page load
@@ -88,4 +88,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // });
 
     updateButtonVisibility();
+});
+
+
+// JavaScript to fill the span with dots up to 72 characters
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all span elements with the class "fill"
+    const fillSpans = document.querySelectorAll(".fill:first-child");
+
+    // Define the maximum width in pixels
+    const maxWidth = fillSpans[0].offsetWidth-10; // Change this value to your desired width
+
+    // Loop through each span element
+    fillSpans.forEach(fillSpan => {
+        let innerSpan = fillSpan.querySelector("span")
+        let textContent = innerSpan.textContent;
+        let currentWidth = innerSpan.offsetWidth
+
+        // Add dots until the width reaches the maximum width
+        while (currentWidth < maxWidth) {
+            textContent += ".";
+            innerSpan.innerText = textContent
+            currentWidth = innerSpan.offsetWidth;
+        }
+
+        // Update the span content
+        fillSpan.textContent = textContent;
+    });
 });

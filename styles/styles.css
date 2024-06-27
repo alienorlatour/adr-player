@@ -1,3 +1,10 @@
+/*$red: #EF1925;*/
+
+/*- vert #4BB167*/
+/*- jaune #FFEC01*/
+/*- mauve #9936DF*/
+/*- rose #E6256C*/
+
 @font-face {
     font-family: 'oldstyle';
     src: url("oldstyle.ttf");
@@ -57,7 +64,7 @@ header .title-wrapper .subtitle {
     header .title-wrapper .subtitle:after {
         content: "════════";
         padding: 0 10px;
-        color: #c80000;
+        color: #EF1925;
     }
 }
 
@@ -112,13 +119,14 @@ header .title-wrapper .subtitle {
     text-decoration: none;
     padding: 10px;
     color: black;
-    border-bottom: 1px dotted black;
     position: relative;
+    align-items: flex-end;
 }
 
 .nav-links a span.fill {
-    overflow: hidden;
+    display: flex;
     flex-grow: 1;
+    align-items: center;
 }
 
 p.hr {
