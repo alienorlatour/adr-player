@@ -21,6 +21,23 @@
 .listen .marquee {
     flex: 1;
     padding: 5px;
+    overflow: hidden;
+}
+
+.listen .marquee .currently-playing {
+    display: inline-block;
+    white-space: nowrap;
+    width: auto;
+}
+
+.listen.playing .marquee .currently-playing {
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    30% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
 }
 
 .listen .donate a {

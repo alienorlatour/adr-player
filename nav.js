@@ -1,3 +1,24 @@
+function bars() {
+    const bars = document.querySelectorAll('.cdtheque .bar');
+    const mainImage = document.getElementById('main-image');
+    const imageText = document.getElementById('image-text');
+
+    bars.forEach(bar => {
+        bar.addEventListener('click', () => {
+            const newImage = bar.getAttribute('data-image');
+            const textId = bar.getAttribute('data-text-id');
+            const newText = document.getElementById(textId).innerHTML;
+
+            mainImage.src = newImage;
+            imageText.innerHTML = newText;
+
+            document.querySelector("#image-text h4").style.color = bar.style.backgroundColor
+        });
+    });
+
+    bars[0].click()
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const posts = Array.from(document.querySelectorAll('.nav-links a')).map(link => ({
         hash: link.getAttribute('href').substring(1),
@@ -17,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(html => {
                 document.querySelector('.content-text').innerHTML = html;
+                return 0
+            }).then(n => {
+                bars();
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
@@ -31,28 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (file) {
             loadContentFromFile(file);
         }
-    }
-
-    function loadContentByIndex(index) {
-        const post = posts[index];
-        if (post) {
-            const file = post.file;
-            loadContentFromFile(file);
-            window.location.hash = '#' + post.hash;
-
-            // Scroll to the top of the page
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // Optional: smooth scrolling animation
-            });
-            updateButtonVisibility();
-        }
-    }
-
-    // Function to update visibility of prevButton and nextButton
-    function updateButtonVisibility() {
-        // document.getElementById('prevButton').style.display = currentIndex === 0 ? 'none' : 'inline-block';
-        // document.getElementById('nextButton').style.display = currentIndex === posts.length - 1 ? 'none' : 'inline-block';
     }
 
     // Load the content on initial page load
@@ -76,18 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Listen for hash changes (e.g., when navigating back/forward)
     window.addEventListener('hashchange', loadContentFromHash);
-
-    // document.getElementById('prevButton').addEventListener('click', function () {
-    //     currentIndex = (currentIndex - 1 + posts.length) % posts.length;
-    //     loadContentByIndex(currentIndex);
-    // });
-    //
-    // document.getElementById('nextButton').addEventListener('click', function () {
-    //     currentIndex = (currentIndex + 1) % posts.length;
-    //     loadContentByIndex(currentIndex);
-    // });
-
-    updateButtonVisibility();
 });
 
 
@@ -97,13 +87,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const fillSpans = document.querySelectorAll(".fill:first-child");
 
     // Define the maximum width in pixels
-    const maxWidth = fillSpans[0].offsetWidth-10; // Change this value to your desired width
+    const maxWidth = fillSpans[0].offsetWidth - 10; // Change this value to your desired width
 
     // Loop through each span element
     fillSpans.forEach(fillSpan => {
         let innerSpan = fillSpan.querySelector("span")
         let textContent = innerSpan.textContent;
         let currentWidth = innerSpan.offsetWidth
+
+        textContent += " "
 
         // Add dots until the width reaches the maximum width
         while (currentWidth < maxWidth) {

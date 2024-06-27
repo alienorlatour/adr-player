@@ -69,8 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         changeAudioSource(song.track)
         currentlyPlaying.innerHTML = song.title
-        listenContainer.style.background = "linear-gradient(60deg, "+song.colour+" 75%, #000)"
-        console.log(">", listenContainer.style.background, ">>", song.colour)
+        listenContainer.style.background = "linear-gradient(60deg, " + song.colour + " 75%, #000)"
     }
 
     function next() {
@@ -78,48 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
         changeSong(randomIndex)
     }
 
-    // function replacePlaylist() {
-    //     const carouselDots = document.querySelector(".playlist");
-    //
-    //     // Clear existing dots
-    //     carouselDots.innerHTML = "";
-    //
-    //     let numDots = playlists[currentAlbum].songs.length
-    //
-    //     // Add the specified number of dots
-    //     for (let i = 0; i < numDots; i++) {
-    //         const dot = document.createElement("li");
-    //         dot.className = "dot";
-    //         // Make the first dot active
-    //         if (i === 0) {
-    //             dot.classList.add("active");
-    //         }
-    //         dot.innerHTML = playlists[currentAlbum].songs[i].title
-    //         dot.addEventListener("click", () => {
-    //             changeSong(currentAlbum, i)
-    //         })
-    //         carouselDots.appendChild(dot);
-    //     }
-    //
-    // }
-
-    // Event listener for previous button
-    // prevButton.addEventListener("click", () => {
-    //     let newSong = (currentSongIndex - 1 + playlists[currentAlbum].songs.length) % playlists[currentAlbum].songs.length;
-    //     changeSong(currentAlbum, newSong);
-    // });
-
     // Event listener for next button
     nextButton.addEventListener("click", () => {
         next();
     });
-
-    // Event listener for thumbnail clicks
-    // thumbnails.forEach((thumbnail, index) => {
-    //     thumbnail.addEventListener("click", () => {
-    //         changeSong(index, 0);
-    //     });
-    // });
 
     function togglePlayPause() {
         isPlaying = !isPlaying;
@@ -149,17 +110,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    // Initial setup: Show the play button by default
     playButton.addEventListener("click", togglePlayPause);
     pauseButton.addEventListener("click", togglePlayPause);
 
-    // document.querySelectorAll('.carousel-slide').forEach(function (sticker) {
-    //     sticker.addEventListener('click', function () {
-    //         sticker.classList.toggle("flipped")
-    //     });
-    // });
-
-
+    // start on first interaction
     document.addEventListener('click', playOnce);
     document.addEventListener('keydown', playOnce);
     document.addEventListener('touchstart', playOnce);
@@ -167,10 +121,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function playOnce() {
         next();
-        togglePlayPause();
-        document.removeEventListener('click', playOnce);
-        document.removeEventListener('keydown', playOnce);
-        document.removeEventListener('touchstart', playOnce);
-        window.removeEventListener('focus', playOnce);
+        audio.play().then(() => {
+            document.removeEventListener('click', playOnce);
+            document.removeEventListener('keydown', playOnce);
+            document.removeEventListener('touchstart', playOnce);
+            window.removeEventListener('focus', playOnce);
+            listenContainer.classList.toggle("playing");
+            listenContainer.classList.toggle("paused");
+            isPlaying = true
+        }).catch(error => {});
     }
 });
