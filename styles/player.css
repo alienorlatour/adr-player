@@ -1,6 +1,7 @@
 .listen {
-    margin: 0 20px 30px 20px;
+    margin: -2px 20px 30px 20px; /* hide the border until it gets sticky */
     border-bottom: 2px solid black;
+    border-top: 2px solid black;
 
     display: flex;
     justify-content: flex-start;
@@ -9,7 +10,8 @@
     background: linear-gradient(60deg, #EF1925 75%, #000);
 
     position: sticky;
-    top: 0;
+    top: 6px;
+    z-index: 3;
 }
 
 .listen button {
@@ -35,9 +37,15 @@
 }
 
 @keyframes marquee {
-    0% { transform: translateX(0%); }
-    30% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+    0% {
+        transform: translateX(0%);
+    }
+    30% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .listen .donate a {

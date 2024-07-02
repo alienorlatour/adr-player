@@ -16,7 +16,9 @@ function bars() {
         });
     });
 
-    bars[0].click()
+    if (bars.length > 0) {
+        bars[0].click()
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -40,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector('.content-text').innerHTML = html;
                 return 0
             }).then(n => {
-                bars();
-            })
+            bars();
+        })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
                 document.querySelector('.content-text').innerHTML = "<p>Cette page n'est actuellement pas disponible.</p>";

@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         changeAudioSource(song.track)
         currentlyPlaying.innerHTML = song.title
         listenContainer.style.background = "linear-gradient(60deg, " + song.colour + " 75%, #000)"
+
     }
 
     function next() {
@@ -104,10 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isPlaying) {
             audio.play()
         }
-    }
-
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
     playButton.addEventListener("click", togglePlayPause);
