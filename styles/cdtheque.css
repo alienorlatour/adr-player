@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
+    padding-bottom: 30px;
 }
 
 .cdtheque > div {
@@ -12,7 +13,13 @@
 .cdtheque .bars {
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
+    margin: 0 20px 0 0;
+}
+@media screen and (max-width: 500px) {
+    .cdtheque .bars {
+        margin-right: 10px;
+        margin-left: -20px;
+    }
 }
 
 .cdtheque .bar {
@@ -41,6 +48,13 @@
     object-fit: cover;
 }
 
+@media screen and (max-width: 500px) {
+    .cdtheque #main-image {
+        width: 230px;
+        height: 230px;
+    }
+}
+
 .cdtheque #image-text {
     margin-top: 10px;
     margin-left: 40px;
@@ -53,12 +67,14 @@
 }
 
 .cdtheque #image-text  ul {
-
+    border-top: black dotted thin;
 }
 
 .cdtheque #image-text  ul li {
     display: list-item;
-    list-style: '· ';
+    list-style: none;
+    border-bottom: black dotted thin;
+    padding: 10px;
 }
 
 /**** vertical ***********/
