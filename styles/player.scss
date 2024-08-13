@@ -1,0 +1,100 @@
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    30% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.listen {
+    margin: -2px 0 0 0; /* hide the border until it gets sticky */
+    border-bottom: 2px solid $lyre-header-color;
+    border-top: 2px solid $lyre-header-color;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background: linear-gradient(60deg, #EF1925 75%, #000);
+
+    top: 6px;
+    z-index: 3;
+
+    button {
+        background: none;
+        cursor: pointer;
+        border: none;
+    }
+
+
+    .marquee {
+        flex: 1;
+        padding: 5px;
+        overflow: hidden;
+
+        .currently-playing {
+            display: inline-block;
+            white-space: nowrap;
+            width: auto;
+        }
+    }
+
+    &.playing .marquee .currently-playing {
+        animation: marquee 10s linear infinite;
+    }
+
+
+    .donate a {
+        color: white;
+        text-decoration: none;
+        margin-right: 10px;
+
+        ion-icon {
+            font-size: 35px;
+        }
+
+        span {
+            max-width: 0;
+            transition: max-width 0.5s ease-in-out;
+
+            text-wrap: nowrap;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        &:hover span {
+            max-width: 300px;
+        }
+    }
+    /************ paused *********************/
+
+    &.paused {
+
+        .play-pause-button button.pause-button,
+        .next-button {
+            display: none;
+        }
+
+        .play-pause-button button.play-button {
+            display: block;
+        }
+    }
+
+    /************ playing ********************/
+
+    &.playing {
+
+        .play-pause-button button.pause-button,
+        .next-button {
+            display: block;
+        }
+
+        .play-pause-button button.play-button {
+            display: none;
+        }
+    }
+}
