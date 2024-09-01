@@ -11,7 +11,7 @@
 }
 
 $player-background: #EF1925;
-$player-height: 48px;
+$player-height: 54px;
 
 .listen {
   display: flex;
@@ -21,11 +21,13 @@ $player-height: 48px;
   height: $player-height;
   margin-top: -$player-height;
 
-  background: linear-gradient(60deg, $player-background 75%, #000);
+  background: linear-gradient(60deg, #000, $player-background, $player-background, #000);
 
   z-index: 3;
   position: sticky;
   top: 0;
+
+  border-bottom: black thin solid;
 
   button {
     background: none;
@@ -33,11 +35,13 @@ $player-height: 48px;
     border: none;
   }
 
-
   .marquee {
     flex: 1;
     padding: 5px;
     overflow: hidden;
+    text-align: center;
+
+    font-size: 150%;
 
     .currently-playing {
       display: inline-block;
@@ -50,8 +54,7 @@ $player-height: 48px;
     animation: marquee 10s linear infinite;
   }
 
-
-  .donate a {
+  .donate a, button.pause-button, button.next-button, button.play-button {
     color: white;
     text-decoration: none;
     margin-right: 10px;

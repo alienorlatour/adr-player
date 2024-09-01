@@ -43,20 +43,14 @@
         </audio>
         <div class="play-pause-button">
             <button class="play-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24">
-                    <path stroke="black" fill="none" d="M8 5v14l11-7z"/>
-                </svg>
+                <ion-icon name="play-outline"></ion-icon>
             </button>
             <button class="pause-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24">
-                    <path stroke="black" fill="none" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                </svg>
+                <ion-icon name="pause-outline"></ion-icon>
             </button>
         </div>
         <button class="next-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
-                <path stroke="black" fill="none" d="M 5 5 v 14 l 11 -7 Z M 11 5 v 14 l 11 -7 Z"/>
-            </svg>
+            <ion-icon name="play-forward-outline"></ion-icon>
         </button>
         <div class="marquee">
         <span class="currently-playing">
@@ -66,11 +60,11 @@
         <div class="donate">
             <a href="#cdtheque" data-file="cdtheque.html">
                 <span>Télécharger</span>
-                <ion-icon name="download-outline"></ion-icon>
+                <ion-icon name="download-outline">Musique</ion-icon>
             </a>
             <a target="_blank" href="http://www.helloasso.fr" data-file="cdtheque.html">
                 <span>Faire un don</span>
-                <ion-icon name="heart-circle-outline"></ion-icon>
+                <ion-icon name="wallet-outline">Donner</ion-icon>
             </a>
         </div>
     </div>
@@ -120,7 +114,7 @@
                 (comme
                 cela est la norme aujourd’hui).</p>
 
-            <a href="path/to/pdf1.pdf" target="_blank" class="see-more">Continue reading...</a>
+            <a href="path/to/pdf1.pdf" target="_blank" class="see-more">Lire la suite</a>
         </article>
     </section>
 </main>
@@ -131,13 +125,12 @@
 </footer>
 
 <script src="music/player.js"></script>
-<script src="nav.js"></script>
 <script>
     function closeOverlay() {
         document.getElementById('overlay').style.display = 'none';
     }
 </script>
-<!--<script type="module" src="//unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>-->
-<!--<script nomodule src="//unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>-->
+<script type="module" src="//unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="//unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
