@@ -10,7 +10,7 @@
   }
 }
 
-$player-background: #fefef4;
+$player-background: #fff;
 $player-height: 54px;
 
 $red: #EF1925;
@@ -43,7 +43,7 @@ $red: #EF1925;
     padding: 5px;
     overflow: hidden;
 
-    font-size: 150%;
+    font-size: 130%;
 
     .currently-playing {
       display: inline-block;
@@ -59,10 +59,10 @@ $red: #EF1925;
   .donate a, button.pause-button, button.next-button, button.play-button {
     text-decoration: none;
     margin-right: 10px;
+    color: black;
 
     ion-icon {
       font-size: 35px;
-      color: black;
     }
 
     span {
