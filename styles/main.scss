@@ -1,10 +1,11 @@
 // Variables
 $text-color: #000;
 $background-color: #fefef4;
-$title-color: $background-color;
 
-$lyre-header-color: $background-color;
-$lyre-background-color: #000;
+$lyre-header-color: $text-color;
+$lyre-background-color: $background-color;
+
+$red: #EF1925;
 
 @font-face {
   font-family: 'oldstyle';
@@ -76,6 +77,7 @@ header {
           &:before, &:after {
             content: "════════";
             padding: 0 10px;
+            color: $red;
           }
         }
       }
@@ -154,9 +156,18 @@ main {
     padding-bottom: 20px;
     border-bottom: 1px solid $text-color;
 
+    &:last-child {
+      border-bottom: none;
+    }
+
     h2 {
       font-size: 24px;
       margin: 0 0 15px 0;
+      color: #EF1925;
+    }
+
+    h3 {
+      font-family: 'oldstyle-sc', monospace;
     }
 
     p {
@@ -174,6 +185,7 @@ main {
       color: $text-color;
       text-decoration: underline;
       font-style: italic;
+      float: right;
     }
   }
 }

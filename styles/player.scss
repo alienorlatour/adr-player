@@ -10,8 +10,10 @@
   }
 }
 
-$player-background: #EF1925;
+$player-background: #fefef4;
 $player-height: 54px;
+
+$red: #EF1925;
 
 .listen {
   display: flex;
@@ -21,13 +23,14 @@ $player-height: 54px;
   height: $player-height;
   margin-top: -$player-height;
 
-  background: linear-gradient(60deg, #000, $player-background, $player-background, #000);
+  //background: linear-gradient(60deg, #000, $player-background, $player-background, #000);
+  background: $player-background;
 
   z-index: 3;
   position: sticky;
   top: 0;
 
-  border-bottom: black thin solid;
+  border-bottom: black 2px solid;
 
   button {
     background: none;
@@ -39,7 +42,6 @@ $player-height: 54px;
     flex: 1;
     padding: 5px;
     overflow: hidden;
-    text-align: center;
 
     font-size: 150%;
 
@@ -55,12 +57,12 @@ $player-height: 54px;
   }
 
   .donate a, button.pause-button, button.next-button, button.play-button {
-    color: white;
     text-decoration: none;
     margin-right: 10px;
 
     ion-icon {
       font-size: 35px;
+      color: black;
     }
 
     span {

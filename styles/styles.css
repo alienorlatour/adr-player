@@ -23,15 +23,15 @@ header {
   flex-direction: column;
   justify-content: flex-end; }
   header .lyre-header {
-    color: #fefef4;
+    color: #000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: 0 5px;
-    background: rgba(0, 0, 0, 0.7);
-    border-top: #fefef4 6px double;
-    border-bottom: #fefef4 6px double; }
+    background: rgba(254, 254, 244, 0.7);
+    border-top: #000 6px double;
+    border-bottom: #000 6px double; }
     header .lyre-header h1, header .lyre-header h2 {
       margin: 0;
       text-align: center; }
@@ -47,7 +47,8 @@ header {
         @media screen and (min-width: 760px) {
           header .lyre-header .title-wrapper .subtitle:before, header .lyre-header .title-wrapper .subtitle:after {
             content: "════════";
-            padding: 0 10px; } }
+            padding: 0 10px;
+            color: #EF1925; } }
     header .lyre-header .logo img {
       max-width: 80px;
       margin-bottom: -4px; }
@@ -78,9 +79,14 @@ main {
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #000; }
+    .articles article:last-child {
+      border-bottom: none; }
     .articles article h2 {
       font-size: 24px;
-      margin: 0 0 15px 0; }
+      margin: 0 0 15px 0;
+      color: #EF1925; }
+    .articles article h3 {
+      font-family: 'oldstyle-sc', monospace; }
     .articles article p {
       margin-bottom: 15px;
       line-height: 1.6; }
@@ -91,7 +97,8 @@ main {
       margin-top: 10px;
       color: #000;
       text-decoration: underline;
-      font-style: italic; }
+      font-style: italic;
+      float: right; }
 
 #overlay {
   position: fixed;
@@ -149,11 +156,11 @@ main {
   align-items: center;
   height: 54px;
   margin-top: -54px;
-  background: linear-gradient(60deg, #000, #EF1925, #EF1925, #000);
+  background: #fefef4;
   z-index: 3;
   position: sticky;
   top: 0;
-  border-bottom: black thin solid;
+  border-bottom: black 2px solid;
   /************ paused *********************/
   /************ playing ********************/ }
   .listen button {
@@ -164,7 +171,6 @@ main {
     flex: 1;
     padding: 5px;
     overflow: hidden;
-    text-align: center;
     font-size: 150%; }
     .listen .marquee .currently-playing {
       display: inline-block;
@@ -173,11 +179,11 @@ main {
   .listen.playing .marquee .currently-playing {
     animation: marquee 10s linear infinite; }
   .listen .donate a, .listen button.pause-button, .listen button.next-button, .listen button.play-button {
-    color: white;
     text-decoration: none;
     margin-right: 10px; }
     .listen .donate a ion-icon, .listen button.pause-button ion-icon, .listen button.next-button ion-icon, .listen button.play-button ion-icon {
-      font-size: 35px; }
+      font-size: 35px;
+      color: black; }
     .listen .donate a span, .listen button.pause-button span, .listen button.next-button span, .listen button.play-button span {
       max-width: 0;
       transition: max-width 0.5s ease-in-out;
