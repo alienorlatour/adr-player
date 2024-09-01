@@ -14,7 +14,7 @@ body {
 
 header {
   height: 100vh;
-  background-image: url("../img/lyre.jpg");
+  background-image: url("../img/remi-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -28,6 +28,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    background: rgba(0, 0, 0, 0.2);
     border-top: #fff 6px double;
     border-bottom: #fff 6px double; }
     header .lyre-header h1, header .lyre-header h2 {
@@ -49,25 +50,9 @@ header {
     header .lyre-header .logo img {
       max-width: 80px;
       margin-bottom: -4px; }
-
-#listen {
-  background-color: #fff;
-  width: 100%;
-  padding: 10px 0;
-  transition: all 0.3s ease;
-  position: sticky;
-  top: 0; }
-  #listen ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center; }
-    #listen ul li {
-      margin: 0 15px; }
-      #listen ul li a {
-        text-decoration: none;
-        color: #000; }
+  header .player-holder {
+    display: block;
+    height: 48px; }
 
 main {
   max-width: 1200px;
@@ -94,7 +79,7 @@ main {
     border-bottom: 1px solid #000; }
     .articles article h2 {
       font-size: 24px;
-      margin-bottom: 15px; }
+      margin: 0 0 15px 0; }
     .articles article p {
       margin-bottom: 15px;
       line-height: 1.6; }
@@ -158,16 +143,15 @@ main {
   100% {
     transform: translateX(-100%); } }
 .listen {
-  margin: -2px 0 0 0;
-  /* hide the border until it gets sticky */
-  border-bottom: 2px solid #fff;
-  border-top: 2px solid #fff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  height: 48px;
+  margin-top: -48px;
   background: linear-gradient(60deg, #EF1925 75%, #000);
-  top: 6px;
   z-index: 3;
+  position: sticky;
+  top: 0;
   /************ paused *********************/
   /************ playing ********************/ }
   .listen button {
