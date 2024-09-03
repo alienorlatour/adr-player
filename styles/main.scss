@@ -48,7 +48,7 @@ header {
 
     background: transparentize($lyre-background-color, 0.15);
 
-    border: $lyre-header-color 6px double;
+    border: $lyre-header-color 9px double;
     //border-bottom: $lyre-header-color 6px double;
 
     h1, h2 {
@@ -182,6 +182,31 @@ main {
       text-decoration: underline;
       font-style: italic;
       float: right;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+
+  a {
+    background-color: $red;
+    color: $background-color;
+    text-decoration: none;
+    margin: 0 10px;
+    border-radius: 50%;
+
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    line-height: 35px;
+
+    ion-icon {
+      vertical-align: middle;
+      line-height: normal;
+      display: inline-block;
     }
   }
 }

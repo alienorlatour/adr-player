@@ -28,7 +28,7 @@ header {
     align-items: center;
     padding: 0 5px;
     background: rgba(255, 255, 255, 0.85);
-    border: #000 6px double; }
+    border: #000 9px double; }
     header .lyre-header h1, header .lyre-header h2 {
       margin: 0;
       text-align: center;
@@ -96,6 +96,25 @@ main {
       text-decoration: underline;
       font-style: italic;
       float: right; }
+
+footer {
+  text-align: center;
+  padding: 20px; }
+  footer a {
+    background-color: #EF1925;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    border-radius: 50%;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    line-height: 35px; }
+    footer a ion-icon {
+      vertical-align: middle;
+      line-height: normal;
+      display: inline-block; }
 
 #overlay {
   position: fixed;
