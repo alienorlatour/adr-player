@@ -58,6 +58,8 @@ main {
   margin: 0 auto;
   padding: 20px;
   padding-top: 60px; }
+  main > section.inactive {
+    display: none; }
 
 .articles {
   max-width: 1200px;
@@ -221,7 +223,7 @@ footer {
 
 .cdtheque {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
   padding-bottom: 30px;
@@ -230,21 +232,21 @@ footer {
     margin: 0; }
   .cdtheque .bars {
     display: flex;
-    flex-direction: column;
-    margin: 0 20px 0 0; }
+    flex-direction: row;
+    margin: 0 0 20px 0; }
     @media screen and (max-width: 500px) {
       .cdtheque .bars {
         margin-right: 10px;
         margin-left: -20px; } }
   .cdtheque .bar {
-    width: 60px;
-    height: 30px;
-    margin-bottom: 10px;
-    transform: skewY(-20deg);
+    width: 30px;
+    height: 60px;
+    margin: 0 5px;
+    transform: skewX(-20deg);
     transition: all 0.3s ease;
     cursor: pointer; }
     .cdtheque .bar:hover {
-      transform: skewY(-20deg) scale(1.1); }
+      transform: skewX(-20deg) scale(1.1); }
   .cdtheque .image-container {
     display: flex;
     flex-direction: row;
@@ -260,16 +262,18 @@ footer {
         height: 230px; } }
   .cdtheque #image-text {
     margin-top: 10px;
-    margin-left: 40px;
     text-align: left;
     flex-grow: 1; }
     .cdtheque #image-text h4 {
-      font-weight: bold; }
+      font-weight: bold;
+      text-align: center; }
     .cdtheque #image-text ul {
-      border-top: black dotted thin; }
+      border-top: black dotted thin;
+      list-style: none;
+      margin: 0;
+      padding: 0; }
       .cdtheque #image-text ul li {
         display: list-item;
-        list-style: none;
         border-bottom: black dotted thin;
         padding: 10px; }
   @media (max-width: 767px) {

@@ -62,7 +62,7 @@
         </span>
     </div>
     <div class="donate">
-        <a href="#cdtheque" data-file="cdtheque.html">
+        <a href="javascript:void(0)" id="cdthequelink">
             <span>Télécharger</span>
             <ion-icon name="download-outline">Musique</ion-icon>
         </a>
@@ -73,7 +73,6 @@
     </div>
 </div>
 
-
 <main>
     <section class="articles">
         <article>
@@ -82,35 +81,111 @@
 
             <p>Il est toujours difficile de se présenter sans avoir la désagréable impression de se vendre.</p>
             <p>Vincent Mons, notre cher camarade et ingénieur du son, a dit un jour de nous : « <i>Le projet révolutionnaire de L’Armée des Romantiques peut
-                ainsi se comprendre dans une puissante simplicité, par le souhait de dire quelque chose sur la société invoquant le réel de l’aujourd’hui et de
+                ainsi se comprendre dans une puissante simplicité, par le souhait de dire quelque chose sur la société invoquant le réel de l’aujourd’hui et
+                de
                 l’humain</i>&nbsp;».</p>
             <p>Cette phrase, que nous pouvons l’entendre dire dans l’épisode 9 des Podcasts de L’Armée des Romantiques, pourrait en déstabiliser plus d’un
-                tant il est peu habituel qu’un ensemble de musique classique puisse évoquer la vie de la cité et prétendre y prendre part en l’analysant sous
+                tant il est peu habituel qu’un ensemble de musique classique puisse évoquer la vie de la cité et prétendre y prendre part en l’analysant
+                sous
                 l’angle de la production matérielle et économique.</p>
             <p>Mais est-ce le rôle des artistes que de s’occuper de politique ? Poser la question c’est évidement y répondre.</p>
-            <p>L’artiste est souvent associé à la notion même de liberté. Mais comment créer librement sur le plan artistique sans être conscient de l’état de
+            <p>L’artiste est souvent associé à la notion même de liberté. Mais comment créer librement sur le plan artistique sans être conscient de l’état
+                de
                 subordination qui règne chez les artistes ?</p>
-            <p>Cette quête de liberté ne date pas d’hier. La revendiquer aujourd’hui comme condition nécessaire à tout acte de création, nous invite à ouvrir
-                les yeux sur les structures de domination qui financent le milieu musical classique : mécénat et marché public des subventions. Si nous savons
+            <p>Cette quête de liberté ne date pas d’hier. La revendiquer aujourd’hui comme condition nécessaire à tout acte de création, nous invite à
+                ouvrir
+                les yeux sur les structures de domination qui financent le milieu musical classique : mécénat et marché public des subventions. Si nous
+                savons
                 faire la différence entre ces deux institutions, nous savons également que les artistes n’ont aucun pouvoir décisionnel sur ces structures.
                 Alors comment débattre sereinement entre nous sur les enjeux esthétiques de l’art si notre survie économique dépend de décideurs extérieurs&nbsp;?</p>
-            <p>Comme vous le voyez le milieu de la musique classique n’échappe pas aux enjeux des conditions matérielles, contrairement aux images d’Épinal qui
+            <p>Comme vous le voyez le milieu de la musique classique n’échappe pas aux enjeux des conditions matérielles, contrairement aux images d’Épinal
+                qui
                 nous font croire que les artistes seraient au delà des réalités du champ social.</p>
-            <p>C’est pour cela que L’Armée des Romantiques n’hésite pas à reprendre à son compte la phrase de Baudelaire : « Parler d’art d’une façon partiale,
+            <p>C’est pour cela que L’Armée des Romantiques n’hésite pas à reprendre à son compte la phrase de Baudelaire : « Parler d’art d’une façon
+                partiale,
                 passionnée, et politique » .</p>
-            <p>L’Armée des Romantiques est un ensemble musical basé à Marseille. Son champ d’expression est la musique classique ou plus précisément la musique
-                romantique jouée sur instruments historiques. Elle mène une analyse profonde sur l’esthétique romantique qui est aujourd’hui masquée par celle
+            <p>L’Armée des Romantiques est un ensemble musical basé à Marseille. Son champ d’expression est la musique classique ou plus précisément la
+                musique
+                romantique jouée sur instruments historiques. Elle mène une analyse profonde sur l’esthétique romantique qui est aujourd’hui masquée par
+                celle
                 du néoclassicisme.</p>
 
             <img src="img/manu.webp" alt="Manu">
 
             <p>Son activité ne se limite pas aux concerts et aux disques. Sur ce site vous aurez accès gratuitement à tout ce que nous produisons : des
-                podcasts, des vidéos, des enregistrements, des articles. Cet acte de gratuité nous est apparu comme la seule manière de produire librement. Sans
-                devoir aller quémander sur le marché actuel de la musique qu’un producteur accepte de nous acheter, voire d’alimenter la rente capitaliste des
+                podcasts, des vidéos, des enregistrements, des articles. Cet acte de gratuité nous est apparu comme la seule manière de produire librement.
+                Sans
+                devoir aller quémander sur le marché actuel de la musique qu’un producteur accepte de nous acheter, voire d’alimenter la rente capitaliste
+                des
                 plateformes collaboratives (comme cela est la norme aujourd’hui).</p>
 
             <a href="path/to/pdf1.pdf" target="_blank" class="see-more">Lire la suite</a>
         </article>
+    </section>
+
+    <section class="cdtheque inactive">
+        <div class="bars">
+            <div class="bar" style="background-color: #EF1925;" data-image="music/01rouge/cover.png" data-text-id="brahms"></div>
+            <div class="bar" style="background-color: #4BB167;" data-image="music/04vert/cover.png" data-text-id="beethoven"></div>
+            <div class="bar" style="background-color: #FFEC01;" data-image="music/02jaune/cover.png" data-text-id="liszt"></div>
+            <div class="bar" style="background-color: #9936DF;" data-image="music/03violet/cover.png" data-text-id="chopin"></div>
+            <div class="bar" style="background-color: #E6256C;" data-image="music/05rose/cover.png" data-text-id="text5"></div>
+        </div>
+        <div class="image-container">
+            <img id="main-image" src="music/01rouge/cover.png" alt="Main Image">
+        </div>
+        <div id="image-text"></div>
+        <div class="hidden-texts" style="display: none">
+
+            <div id="brahms">
+                <h4>Brahms</h4>
+                <ul>
+                    <li>Ballades op.10 Andante</li>
+                    <li>Ballades op.10 Intermezzo</li>
+                    <li>Ballades op.10 Andante con moto</li>
+                    <li>Ballades op.10 Mouvement imaginaire</li>
+                </ul>
+
+            </div>
+            <div id="beethoven">
+                <h4>Beethoven</h4>
+                <ul>
+                    <li>Sonata No. 8 in C minor, Op. 13 "Pathétique"</li>
+                    <li>Sonata No. 14 in C# minor, Op. 27 No. 2 "Moonlight"</li>
+                    <li>Sonata No. 21 in C major, Op. 53 "Waldstein"</li>
+                    <li>Sonata No. 23 in F minor, Op. 57 "Appassionata"</li>
+                </ul>
+            </div>
+            <div id="liszt">
+                <h4>Liszt</h4>
+                <ul>
+                    <li>Piano Trio in A minor</li>
+                    <li>Grand duo concertant</li>
+                    <li>Malediction for Piano and Strings</li>
+                    <li>Hungarian Rhapsody No. 9 "Pesther Carneval"</li>
+                </ul>
+            </div>
+            <div id="chopin">
+                <h4>Chopin</h4>
+                <ul>
+                    <li>Nocturne in E-flat major, Op. 9 No. 2</li>
+                    <li>Ballade No. 1 in G minor, Op. 23</li>
+                    <li>Étude Op. 10 No. 3 in E major "Tristesse"</li>
+                    <li>Polonaise in A-flat major, Op. 53 "Heroic"</li>
+                </ul>
+            </div>
+            <div id="text5">
+                <h4>Résistons</h4>
+                <ul>
+                    <li>Ça Ira</li>
+                    <li>Le Chant des Partisans</li>
+                    <li>Le Temps des Cerises</li>
+                    <li>L'Internationale</li>
+                </ul>
+            </div>
+
+
+        </div>
     </section>
 </main>
 
@@ -136,6 +211,34 @@
 <script>
     function closeOverlay() {
         document.getElementById('overlay').style.display = 'none';
+    }
+
+    document.getElementById('cdthequelink').addEventListener('click', function () {
+        document.querySelector("main > section.articles").classList.add("inactive");
+        document.querySelector("main > section.cdtheque").classList.remove("inactive");
+    });
+
+    // bars
+
+    const bars = document.querySelectorAll('.cdtheque .bar');
+    const mainImage = document.getElementById('main-image');
+    const imageText = document.getElementById('image-text');
+
+    bars.forEach(bar => {
+        bar.addEventListener('click', () => {
+            const newImage = bar.getAttribute('data-image');
+            const textId = bar.getAttribute('data-text-id');
+            const newText = document.getElementById(textId).innerHTML;
+
+            mainImage.src = newImage;
+            imageText.innerHTML = newText;
+
+            document.querySelector("#image-text h4").style.color = bar.style.backgroundColor
+        });
+    });
+
+    if (bars.length > 0) {
+        bars[0].click()
     }
 </script>
 <script type="module" src="//unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

@@ -129,6 +129,11 @@ main {
   margin: 0 auto;
   padding: 20px;
   padding-top: 60px; // Adjust based on your menu height
+
+  & > section.inactive {
+    display: none;
+  }
+
 }
 
 .articles {
