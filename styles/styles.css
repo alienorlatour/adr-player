@@ -40,15 +40,25 @@ header {
       align-items: center; }
       header .lyre-header .title-wrapper .main-title {
         font-size: 55px; }
+        @media screen and (max-width: 900px) {
+          header .lyre-header .title-wrapper .main-title {
+            font-size: 35px; } }
       header .lyre-header .title-wrapper .subtitle {
         font-size: 25px; }
-        @media screen and (min-width: 760px) {
+        @media screen and (min-width: 900px) {
           header .lyre-header .title-wrapper .subtitle:before, header .lyre-header .title-wrapper .subtitle:after {
-            content: "════════";
+            content: "═";
+            color: #EF1925;
             padding: 0 10px; } }
+        @media screen and (max-width: 900px) {
+          header .lyre-header .title-wrapper .subtitle {
+            font-size: 20px; } }
     header .lyre-header .logo img {
-      max-width: 80px;
-      margin-bottom: -4px; }
+      max-height: 140px;
+      margin-bottom: -5px; }
+      @media screen and (max-width: 900px) {
+        header .lyre-header .logo img {
+          max-height: 90px; } }
   header .player-holder {
     display: block;
     height: 54px; }
@@ -179,6 +189,7 @@ footer {
   position: sticky;
   top: 0;
   border-bottom: black 2px solid;
+  border-top: black 2px solid;
   /************ paused *********************/
   /************ playing ********************/ }
   .listen button {
@@ -190,6 +201,9 @@ footer {
     padding: 5px;
     overflow: hidden;
     font-size: 130%; }
+    @media screen and (max-width: 900px) {
+      .listen .marquee {
+        font-size: 90%; } }
     .listen .marquee .currently-playing {
       display: inline-block;
       white-space: nowrap;
@@ -202,14 +216,18 @@ footer {
     color: black; }
     .listen .donate a ion-icon, .listen button.pause-button ion-icon, .listen button.next-button ion-icon, .listen button.play-button ion-icon {
       font-size: 35px; }
+      @media screen and (max-width: 900px) {
+        .listen .donate a ion-icon, .listen button.pause-button ion-icon, .listen button.next-button ion-icon, .listen button.play-button ion-icon {
+          font-size: 20px; } }
     .listen .donate a span, .listen button.pause-button span, .listen button.next-button span, .listen button.play-button span {
-      max-width: 0;
-      transition: max-width 0.5s ease-in-out;
-      text-wrap: nowrap;
-      display: inline-block;
-      overflow: hidden; }
-    .listen .donate a:hover span, .listen button.pause-button:hover span, .listen button.next-button:hover span, .listen button.play-button:hover span {
-      max-width: 300px; }
+      line-height: 35px;
+      vertical-align: bottom; }
+      @media screen and (max-width: 900px) {
+        .listen .donate a span, .listen button.pause-button span, .listen button.next-button span, .listen button.play-button span {
+          font-size: 15px; } }
+      @media screen and (max-width: 450px) {
+        .listen .donate a span, .listen button.pause-button span, .listen button.next-button span, .listen button.play-button span {
+          display: none; } }
   .listen.paused .play-pause-button button.pause-button,
   .listen.paused .next-button {
     display: none; }
@@ -230,6 +248,8 @@ footer {
   /**** vertical ***********/ }
   .cdtheque > div {
     margin: 0; }
+  .cdtheque .return {
+    width: 100%; }
   .cdtheque .bars {
     display: flex;
     flex-direction: row;

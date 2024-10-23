@@ -66,7 +66,7 @@
             <span>Télécharger</span>
             <ion-icon name="download-outline">Musique</ion-icon>
         </a>
-        <a target="_blank" href="http://www.helloasso.fr" data-file="cdtheque.html">
+        <a target="_blank" href="https://www.helloasso.com/associations/l-armee-des-romantiques" data-file="cdtheque.html">
             <span>Faire un don</span>
             <ion-icon name="wallet-outline">Donner</ion-icon>
         </a>
@@ -124,12 +124,13 @@
     </section>
 
     <section class="cdtheque inactive">
+        <div id="cdthequelinkback" class="return"><ion-icon name="chevron-back-outline"></ion-icon></div>
         <div class="bars">
-            <div class="bar" style="background-color: #EF1925;" data-image="music/01rouge/cover.png" data-text-id="brahms"></div>
-            <div class="bar" style="background-color: #4BB167;" data-image="music/04vert/cover.png" data-text-id="beethoven"></div>
-            <div class="bar" style="background-color: #FFEC01;" data-image="music/02jaune/cover.png" data-text-id="liszt"></div>
-            <div class="bar" style="background-color: #9936DF;" data-image="music/03violet/cover.png" data-text-id="chopin"></div>
-            <div class="bar" style="background-color: #E6256C;" data-image="music/05rose/cover.png" data-text-id="text5"></div>
+            <div class="bar" style="background-color: #EF1925;" data-image="music/01-brahms/cover.png" data-text-id="brahms"></div>
+<!--            <div class="bar" style="background-color: #4BB167;" data-image="music/04vert/cover.png" data-text-id="beethoven"></div>-->
+<!--            <div class="bar" style="background-color: #FFEC01;" data-image="music/02jaune/cover.png" data-text-id="liszt"></div>-->
+<!--            <div class="bar" style="background-color: #9936DF;" data-image="music/03violet/cover.png" data-text-id="chopin"></div>-->
+<!--            <div class="bar" style="background-color: #E6256C;" data-image="music/05rose/cover.png" data-text-id="text5"></div>-->
         </div>
         <div class="image-container">
             <img id="main-image" src="music/01rouge/cover.png" alt="Main Image">
@@ -190,19 +191,19 @@
 </main>
 
 <footer>
-    <a href="" target="_blank">
+    <a href="https://www.youtube.com/@armeedesromantiques4210" target="_blank">
         <ion-icon name="logo-youtube"></ion-icon>
     </a>
-    <a href="" target="_blank">
+    <a href="https://www.facebook.com/people/LArm%C3%A9e-des-Romantiques/100063210911573/" target="_blank">
         <ion-icon name="logo-facebook"></ion-icon>
     </a>
-    <a href="" target="_blank">
+    <a href="https://open.spotify.com/show/4tsEStlbNO1YrQkmCDDghu" target="_blank">
         <ion-icon name="radio-outline"></ion-icon>
     </a>
-    <a href="" target="_blank">
+    <a href="mailto:armeedesromantiques@gmail.com" target="_blank">
         <ion-icon name="mail-outline"></ion-icon>
     </a>
-    <a href="" target="_blank">
+    <a href="https://www.helloasso.com/associations/l-armee-des-romantiques" target="_blank">
         <ion-icon name="wallet-outline"></ion-icon>
     </a>
 </footer>
@@ -216,6 +217,10 @@
     document.getElementById('cdthequelink').addEventListener('click', function () {
         document.querySelector("main > section.articles").classList.add("inactive");
         document.querySelector("main > section.cdtheque").classList.remove("inactive");
+    });
+    document.getElementById('cdthequelinkback').addEventListener('click', function () {
+        document.querySelector("main > section.articles").classList.remove("inactive");
+        document.querySelector("main > section.cdtheque").classList.add("inactive");
     });
 
     // bars
